@@ -1,0 +1,28 @@
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+    background-color: aquamarine;
+        
+}
+.cabecera{
+    width: 100%;
+    float: left;
+    background-color: firebrick;
+    text-align: center;
+}
+.menu{
+    width: 60%;
+    float: left;
+    background-color: dimgrey;
+    
+}
+.logotipo{
+    width: 20%;
+    float: left;
+    background-color: blueviolet;
+}
+.usuario{
+    width: 20%;
+    float: left;
+    background-color: coral;
+}

@@ -1,0 +1,41 @@
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+.box{
+    width: 99px;
+    height: 99px;
+    transform: 2s;
+}
+.bg-red{
+    background-color: darkred;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-blue{
+    background-color: blue;
+}
+div.box#theBest{
+    border: 1px solid black;
+    /*border width, style, color*/
+}
+div.box#box1{
+    transform: translate(200px, 0);
+}
+div.box#box2{
+    transform: rotate(40deg);
+    z-index: 3;
+}
+div.box#box3:hover{
+    z-index: 5;
+    border: 20px solid black;
+    transform: rotate(40deg) scale(1.5) rotateX(45deg);
+    
+    
+}
+div.box#box4{
+    border: 20px solid black;
+    transform: skewX(210deg);
+}
+

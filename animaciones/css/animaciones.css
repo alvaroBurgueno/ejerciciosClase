@@ -1,0 +1,50 @@
+/*
+necesitamos conseguir imágenes con fondo transparente
+para que no se solapen los colores con el fondo.
+*/
+
+/* -------------animation style-------------*/
+#db-bg{
+    background-image: url(../img/tatami.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed
+}
+
+.saiyans{
+    
+    width: 15%;
+    
+}
+
+#goku{
+    position: relative;
+    top: 200px;
+    left: 25%;
+    /*
+    bottom: ;
+    right: ;
+    */
+}
+#vegeta{
+    position: fixed;
+    top: 200px;
+    right: 25%;
+    /*
+    bottom: ;
+    right: ;
+    */
+}
+#bolazo{
+    position: absolute;
+    top: 150px;
+    right: 40%;
+    width: 100px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(#ffee26,#ffffff);
+}
+
+
+
