@@ -1,0 +1,55 @@
+.wrapper{
+    width:  960px;
+    margin: 0 auto;
+}
+
+
+.a{
+    width: 100%;
+    float: left;
+}
+.uno{
+    width: 29%;
+    height: 100px;
+    float: left;
+    background-color: green;
+    margin: 2%;
+    
+    
+}
+.dos{
+   width: 62%;
+    height: 100px;
+    float: left;
+    background-color: hotpink;
+     margin: 2%;
+    
+}
+
+
+@media only screen and (max-width:900px) {
+  /* For tablets: */
+  .a {
+    width:80%;
+  }
+  .uno {
+    width:50%;
+  }
+      .dos {
+    width:50%;
+  }
+}
+@media only screen and (max-width:450px) {
+  /* For mobile phones: */
+  .uno, .dos{
+    width:80%;
+  }
+}
+
+
+
+
+
+
+
+

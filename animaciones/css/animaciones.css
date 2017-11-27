@@ -4,13 +4,28 @@ para que no se solapen los colores con el fondo.
 */
 
 /* -------------animation style-------------*/
+@keyframes mover_bola {
+  0%  {  left: 20%; }
+  50% {  left: 60%; background: #fff; }
+  100%{  left: 20%; }
+}
+
+@keyframes cambia_color {
+  50% {  background-color: #CE522F;  }
+}
+@keyframes goku_movimiento {
+  0%  {  left: 20%; 
+  100%{  right: 20%; }
+}
+    
 #db-bg{
     background-image: url(../img/tatami.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed
+    background-attachment: fixed;
 }
+
 
 .saiyans{
     
@@ -22,6 +37,7 @@ para que no se solapen los colores con el fondo.
     position: relative;
     top: 200px;
     left: 25%;
+    animation: goku_movimiento 1s ease-in-out infinite;
     /*
     bottom: ;
     right: ;
@@ -44,6 +60,7 @@ para que no se solapen los colores con el fondo.
     height: 200px;
     border-radius: 50%;
     background: radial-gradient(#ffee26,#ffffff);
+    animation: mover_bola 10s ease-in-out infinite;
 }
 
 
