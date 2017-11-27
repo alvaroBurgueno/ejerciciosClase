@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Conv_CaviarDreams_Bold';
+	src: url('CaviarDreams_Bold/fonts/CaviarDreams_Bold.eot');
+	src: local('☺'), 
+        url('CaviarDreams_Bold/fonts/CaviarDreams_Bold.woff') format('woff'), url('CaviarDreams_Bold/fonts/CaviarDreams_Bold.ttf') format('truetype'), url('CaviarDreams_Bold/fonts/CaviarDreams_Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+header, main, footer{
+    width: 100%;
+    background-color: aquamarine;
+    font-family: 'Conv_CaviarDreams_Bold';
+}
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+.centrar{
+    text-align: center;
+}
+.letra{
+    font-family: Conv_CaviarDreams_Bold;
+}

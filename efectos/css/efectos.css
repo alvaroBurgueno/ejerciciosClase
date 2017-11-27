@@ -1,0 +1,33 @@
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+.centrar{
+    text-align: center;
+}
+.foto{
+    width: 45%;
+    display: inline-block;
+    border: 
+}
+.foto:hover{
+    /*transform: rotateX(35deg);*/
+    transform: rotateY(35deg);
+    
+}
+div > img{
+    width: 150px;
+}
+.menu{
+    width: 23%;
+    height: 5%;
+    display: inline-block;
+    background-color: deepskyblue;
+}
+.menu:hover{
+    
+    background-color: dodgerblue;
+    /*transform: scale(1.5);*/
+    /*transform: rotateX(35deg);*/
+    transform: skewX(35deg);
+}
