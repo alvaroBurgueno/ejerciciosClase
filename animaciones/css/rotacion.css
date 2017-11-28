@@ -1,0 +1,39 @@
+@keyformes moonMoves{
+    transform: translate();
+}
+body{
+    width: 100%;
+    background-color: black;
+}
+main{
+    background-image: url(../img/universo.png);
+    height: 960px;
+}
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+section{
+    width: 100%;  
+}
+.cabecera{
+    background-color: black;
+    color: white;
+}
+.eclipse{
+    
+}
+.centrar{
+    text-align: center;
+}
+#earth{
+   width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    right: 65%;
+}
+#moon{
+    width: 150px;
+    height: 150px;
+}
+

@@ -1,55 +1,77 @@
+body {
+  font-size:1.0em; 
+}
 .wrapper{
     width:  960px;
     margin: 0 auto;
+    
+}
+  .veinte, .cuarenta, .ochenta {
+      font-size: 1.25em;
+  }
+  .letra-pequenia {
+      font-size: 0.9em;
+  }
+            
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body{
+    font-size:120%; 
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  body {
+    font-size:140%;
+  }
 }
 
-
-.a{
+.linea{
     width: 100%;
     float: left;
+    background-color: grey;
+    
 }
-.uno{
-    width: 29%;
-    height: 100px;
+.veinte{
+    width: 16%;
     float: left;
     background-color: green;
+    
     margin: 2%;
-    
-    
 }
-.dos{
-   width: 62%;
-    height: 100px;
+.cuarenta{
+    width: 26%;
+    float: left;
+    background-color: green;
+    
+    margin: 2%;
+}
+.ochenta{
+    width: 66%;
     float: left;
     background-color: hotpink;
-     margin: 2%;
     
+    margin: 2%;
 }
 
-
-@media only screen and (max-width:900px) {
+@media only screen and (max-width: 900px) {
   /* For tablets: */
-  .a {
-    width:80%;
-  }
-  .uno {
-    width:50%;
-  }
-      .dos {
-    width:50%;
-  }
+  .cuarenta{
+        width: 30%;
+      background-color: firebrick;
+    }
+    .ochenta{
+        width: 100%;
+        
+    }
 }
-@media only screen and (max-width:450px) {
+@media only screen and (max-width: 500px) {
   /* For mobile phones: */
-  .uno, .dos{
-    width:80%;
-  }
+    .veinte{
+        font-size: 1.5em;
+    }
+    .cuarenta{
+        width: 100%;
+        font-size: 1.5em;
+    }
 }
-
-
-
-
-
-
-
-

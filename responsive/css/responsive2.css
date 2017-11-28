@@ -1,0 +1,24 @@
+  body {
+      font-size:1.0em; 
+    background-color: aquamarine;
+  }
+  .contenedor {
+      font-size: 1.25em;
+  }
+  .letra-pequenia {
+      font-size: 0.9em;
+  }
+            
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body{
+    font-size:120%; 
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  body {
+    font-size:140%;
+      background-color: dimgrey;
+  }
+}

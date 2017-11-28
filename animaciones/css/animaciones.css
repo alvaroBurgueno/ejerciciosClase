@@ -4,21 +4,46 @@ para que no se solapen los colores con el fondo.
 */
 
 /* -------------animation style-------------*/
-@keyframes mover_bola {
-  0%  {  left: 20%; }
-  50% {  left: 60%; background: #fff; }
-  100%{  left: 20%; }
+    
+@keyframes lanzarBolazo {
+    0% {
+        width: 0;
+        height: 0;
+        right: 28%;
+    }
+    25% {
+        width: 100px;
+        height: 150px;
+        right: 28%;
+        
+    }
+    100%{
+        width: 100px;
+        height: 150px;
+        right: 100%;
+    }
+}
+@keyframes gokuMovimiento {
+    0% {
+         visibility: visible;
+    }
+    18% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: hidden;
+    }
+    80%{
+        visibility: visible;
+        right: 25%;
+    }
+    100% {
+        visibility: visible;
+        left: 75%;
+    }
 }
 
-@keyframes cambia_color {
-  50% {  background-color: #CE522F;  }
-}
-@keyframes goku_movimiento {
-  0%  {  left: 20%; 
-  100%{  right: 20%; }
-}
-    
-#db-bg{
+#db-bg {
     background-image: url(../img/tatami.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,23 +52,19 @@ para que no se solapen los colores con el fondo.
 }
 
 
-.saiyans{
+.saiyans {
     
     width: 15%;
     
 }
 
-#goku{
-    position: relative;
+#goku {
+    position: fixed;
     top: 200px;
     left: 25%;
-    animation: goku_movimiento 1s ease-in-out infinite;
-    /*
-    bottom: ;
-    right: ;
-    */
+    animation: gokuMovimiento 4s;
 }
-#vegeta{
+#vegeta {
     position: fixed;
     top: 200px;
     right: 25%;
@@ -54,13 +75,13 @@ para que no se solapen los colores con el fondo.
 }
 #bolazo{
     position: absolute;
-    top: 150px;
-    right: 40%;
+    top: 290px;
+    right: 35%;
     width: 100px;
-    height: 200px;
+    height: 150px;
     border-radius: 50%;
     background: radial-gradient(#ffee26,#ffffff);
-    animation: mover_bola 10s ease-in-out infinite;
+    animation: lanzarBolazo 6s;
 }
 
 
