@@ -1,3 +1,49 @@
+@keyframes moonMoves{
+    0%{
+        top: 26%;
+        left: 36%;
+        width: 32%;
+        z-index: 2;
+    
+    }
+    15%{
+        top: 22%;
+        left: 68%;
+        z-index: 2;
+    }
+    25%{
+        top: 12%;
+        left: 56%;
+        z-index: -1;
+    }
+    50%{
+        top: 4%;
+        left: 44%;
+        width: 18%;
+        z-index: -1;
+    }
+    65%{
+        top: 12%;
+        left: 10%; 
+        width: 25%;
+        z-index: -1;
+    }
+    85%{
+        top: 21%;
+        left: 27%; 
+        width: 25%;
+        z-index: 2;
+    }
+    100%{
+        top: 26%;
+        left: 36%; 
+        width: 32%;
+        z-index: 2;
+    }
+    
+}
+
+
 body{
     width: 100%;
     background-color: black;
@@ -8,23 +54,31 @@ body{
 }
 
 .eclipse{
-    /*background-image: url(../img/universo.png);*/
     
+    background-image: url(../img/universo.png);
     height: 800px;
     text-align: center;
     float: left;
-    width: 80%;
+    width: 100%;
     position: relative;
 }
 .earth{
     float: left;
     width: 35%;
     position: absolute;
+    top: 15%;
+    left: 35%;
+    z-index: 1;
 }
 .moon{
     float: left;
     position: absolute;
-    width: 15%;
+        top: 26%;
+        left: 36%;
+        width: 32%;
+        z-index: 2;
+    animation: moonMoves 4s infinite;
+    animation-delay: 1s;
 }
 .centrar{
     text-align: center;
