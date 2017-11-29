@@ -1,0 +1,42 @@
+/*la clave para hacer responsive es poner valores en %*/
+header, footer {
+    /*height: 150px;*/
+    height: 100%;
+}
+main{
+    /*height: 900px;*/
+    height: 100%;
+}
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.ejemplo1{
+    border: 2px solid black;
+    padding: 25px;
+    background: url(../img/amanecer.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.ejemplo2{
+    border: 2px solid black;
+    padding: 25px;
+    background: url(../img/amanecer.png);
+    background-repeat: no-repeat;
+    background-size: 300px 100px cover;
+    
+}
+.ejemplo4{
+    border: 2px solid black;
+    padding: 25px;
+    background: url(../img/amanecer.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.ejemplo5{
+    border: 2px solid black;
+    padding: 25 px;
+    background: url(../img/amanecer.png);
+    background-repeat: no-repeat;
+    background-size: 75% 50%;
+}

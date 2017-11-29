@@ -1,39 +1,34 @@
-@keyformes moonMoves{
-    transform: translate();
-}
 body{
     width: 100%;
     background-color: black;
-}
-main{
-    background-image: url(../img/universo.png);
-    height: 960px;
 }
 .wrapper{
     width: 960px;
     margin: 0 auto;
 }
-section{
-    width: 100%;  
-}
-.cabecera{
-    background-color: black;
-    color: white;
-}
+
 .eclipse{
+    /*background-image: url(../img/universo.png);*/
     
+    height: 800px;
+    text-align: center;
+    float: left;
+    width: 80%;
+    position: relative;
+}
+.earth{
+    float: left;
+    width: 35%;
+    position: absolute;
+}
+.moon{
+    float: left;
+    position: absolute;
+    width: 15%;
 }
 .centrar{
     text-align: center;
 }
-#earth{
-   width: 350px;
-    height: 350px;
-    border-radius: 15px;
-    right: 65%;
+.cabecera{
+    color: white;
 }
-#moon{
-    width: 150px;
-    height: 150px;
-}
-
