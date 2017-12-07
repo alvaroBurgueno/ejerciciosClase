@@ -10,13 +10,6 @@ var myName = "Álvaro";
 var birthday;
 var today;
 
-/*if (){
-
-} else {
-
-}*/
-
-
 var today = new Date();  
 var birthday = new Date(1988,06,30); 
 
