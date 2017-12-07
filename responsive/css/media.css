@@ -1,0 +1,44 @@
+/*@media screen and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+    #nav li a {
+        padding-left: 30px;
+        background: url(../img/amanecer.png) left center no repeat;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    #nav li a:before{
+        content: "Email: ";
+        font-style: italic;
+        color: #666666;
+    }
+}*/
+body{
+    background-color: aquamarine;
+    color: forestgreen;
+}
+
+@media screen and (max-width:800px) {
+  /* For tablets: */
+    ul{
+        background-color: green;
+        color: wheat;
+        font-size: 24px;
+    }
+    p{
+        color: bisque;
+        background-color: dimgrey;
+    }
+    
+  }
+
+@media screen and (max-width:600px) {
+  /* For mobile phones: */
+    ul{
+        background-color: black;
+        font-size: 18px;
+    }
+    p{
+        color: white;
+        background-color: black;
+    }
+}

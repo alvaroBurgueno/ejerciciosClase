@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Mi primera página con Bootstrap</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- practicar el push y el pull aquí 
+		https://getbootstrap.com/docs/3.3/css/
+	-->	
+<div class="container-fluid">
+  <h1>Ejemplo del uso del sistema de cuadrícula de Bootstrap para repartir dos textos en forma de columnas usando "div" y clase "container-fluid"</h1>
+  <p>Este ejemplo mostrará los "div" en proporción 25%/75% para dispositivos pequeños y 50%/50% para medianos/grandes dispositivos. Para pequeños dispositivos los "div" se redimensionarán al 100%.</p>
+  <p>Expande/contrae la pantalla para ver el efecto.</p>
+  <div class="row">
+    <div class="col-sm-5 col-sm-offset-10 col-md-pull-4" style="background-color:yellow;">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="col-sm-3 col-md-push-4" style="background-color:pink;">
+     esto tampoco sale  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+       <div class="col-sm-4 col-md-3" style="background-color:pink;">
+      esto no sale
+    </div>
+  </div>
+</div>
+    
+</body>
+
+</body>
+</html>
