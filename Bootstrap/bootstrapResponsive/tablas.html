@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tablas Bootstrap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<table class="table table-hover">
+						<!-- On rows -->
+			<tr class="bg-primary">...</tr>
+			<tr class="bg-success">...</tr>
+			<tr class="bg-warning">...</tr>
+			<tr class="bg-danger">...</tr>
+			<tr class="bg-info">...</tr>
+
+			<!-- On cells (`td` or `th`) -->
+			<tr>
+			  <td class="bg-primary">...</td>
+			  <td class="bg-success">...</td>
+			  <td class="bg-warning">...</td>
+			  <td class="bg-danger">...</td>
+			  <td class="bg-info">...</td>
+			</tr>
+			<tr>
+			  <td class="bg-primary">...</td>
+			  <td class="bg-success">...</td>
+			  <td class="bg-warning">...</td>
+			  <td class="bg-danger">...</td>
+			  <td class="bg-info">...</td>
+			</tr>
+		</table>
+		<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">First Name</th>
+			      <th scope="col">Last Name</th>
+			      <th scope="col">Username</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td class="bg-danger">Mark</td>
+			      <td>Otto</td>
+			      <td>@mdo</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td class="bg-danger">Jacob</td>
+			      <td>Thornton</td>
+			      <td>@fat</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td colspan="2" class="bg-danger">Larry the Bird</td>
+			      <td><span class="glyphicon glyphicon-th-list"></span></td>
+			    </tr>
+			  </tbody>
+</table>
+	</div>
+</body>
+</html>

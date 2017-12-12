@@ -7,13 +7,11 @@ Así que he vivido _____ días.
 */
 var myName = "Álvaro";
 
-var birthday;
-var today;
 
 var today = new Date();  
 var birthday = new Date(1988,06,30); 
 
-var diaNac = birthday.getDate(); 
+var diaNac = birthday.getDay(); 
 var mesNac = birthday.getMonth();
 var anioNac = birthday.getFullYear();
 
