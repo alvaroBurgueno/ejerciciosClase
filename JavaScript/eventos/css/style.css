@@ -1,0 +1,16 @@
+.indented {
+	padding-left: 20px;
+}
+
+a, a:visited, a:hover, a:active {
+	color: white;
+}
+
+div.button {
+	border-radius: 2px;
+	background-color: darkred;
+	width: 30%;
+	margin-left: 35%;
+	color: white;
+	padding: 20px 5%;
+}
