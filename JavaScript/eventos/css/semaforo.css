@@ -1,0 +1,46 @@
+
+body{
+	background-color: darkkhaki;
+}
+.semaforo{
+	width: 12%;
+	height: 400px;
+	top: 15%;
+	left: 65%;
+	background-color: #0F5304;
+	border-radius: 40px; 
+	position: relative;
+}
+.mastil{
+	width: 4%;
+	height: 300px;
+	top: 54%;
+	left: 69%;
+	background-color: #0F5304;
+	position: relative;
+}
+.disco {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	left: 19%;
+	/* background: #5cb85c; */
+}
+.red{
+	background-color: red;
+	top: 4%;
+}
+.yellow {
+	background-color: #F5FD01;
+	top: 38%;
+}
+.green {
+	background-color: #B1FFA4;
+	top: 72%;
+	opacity: 80%;
+}
+
+

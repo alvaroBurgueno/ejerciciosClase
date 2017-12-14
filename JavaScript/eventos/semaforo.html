@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Semáforo</title>
+	<link rel="stylesheet" type="text/css" href="css/semaforo.css">
+</head>
+<body>
+	
+	<div class="">
+		<h3 class="mensaje">Elija el color que desea que tenga el semáforo.</h3>
+		<input type="radio" name="color" value="0" onclick="color()"> Rojo
+	    <input type="radio" name="color" value="1" onclick="color()"> Ámbar
+		<input type="radio" name="color" value="2" onclick="color()"> Verde
+	</div>
+
+
+
+
+	<!-- semáforo -->
+	<div class="contenedorSemaforo">
+		<div class="semaforo">
+			<div id="rojo" class="disco red"></div>
+			<div id="ambar" class="disco yellow"></div>
+			<div id="verde" class="disco green"></div>
+		</div>
+		<div class="mastil"></div>
+	</div>
+
+
+	<script type="text/javascript" src="js/semaforo.js"></script>
+</body>
+</html>
