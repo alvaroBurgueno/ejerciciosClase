@@ -25,19 +25,17 @@ function toggle(){
 
 /*dificultad 2: variable global y una img*/
 
-function toggleDos(){
-		if (cambia){
+var dato;
+function funcionPura(dato){
+
+		if ( dato == false){
 		//...enciende el INTERRUPTOR
-		cambia = false;
 		photoA.innerHTML = "<img src='img/em3.png'>";
 		myTarget.style.backgroundColor = "darkgreen";
-
-
 		}
 		// si no...
 		 else{
-		 	cambia = true;
-			photoA.innerHTML = "<img src='img/em2.png'>";
+		 	photoA.innerHTML = "<img src='img/em2.png'>";
 			myTarget.style.backgroundColor = "darkred";
 		}
 }

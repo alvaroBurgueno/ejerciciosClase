@@ -1,10 +1,15 @@
+ /*var inputValue = $( '#userInput' ).val();*/
+
 
 var opcion;
+
 function color() {
 
 	var color1 = document.getElementById("rojo");
 	var color2 = document.getElementById("ambar");
 	var color3 = document.getElementById("verde");
+
+
 	
 	switch (opcion) {
 		case 0:
@@ -26,6 +31,9 @@ function color() {
 		break;
 	}
 
+}
+
+
 
 
 /*	if(opcion=0){
@@ -38,5 +46,3 @@ function color() {
 	if(opcion=2){
 		
 	}*/
-
-}

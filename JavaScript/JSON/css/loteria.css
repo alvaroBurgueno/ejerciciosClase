@@ -1,0 +1,24 @@
+body{
+	background-color: #805C5C;
+}
+p{
+	position: absolute;
+	margin-left: 105px;
+	margin-top: 45px;
+}
+.boton{
+	width: 300px;
+	height: 105px;
+	background-color: #D1AEAE;
+	margin-left: 40%;
+	border-radius: 30px;
+	position: relative;
+}
+.campoTexto{
+	width: 300px;
+	height: 300px;
+	background-color: #D1AEAE;
+	border-radius: 30px;
+	margin-left: 40%;
+	margin-top: 5%;
+}

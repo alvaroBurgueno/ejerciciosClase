@@ -8,7 +8,7 @@ var mySwitch = 0;
 function toggle(){
 
 	var myTarget = document.getElementById("myButton"); // solo va a existir dentro de la función.
-	var myPhoto = document.getElementById("")
+	
 	// si el INTERRUPTOR está apagado...
 	if (mySwitch == 0){
 		//...enciende el INTERRUPTOR
@@ -25,6 +25,5 @@ function toggle(){
 	 	myTarget.innerHTML = "OFF";	
 	}
 	
-	
-		
 }
+
