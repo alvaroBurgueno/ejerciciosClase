@@ -1,0 +1,8 @@
+body{
+	background-color: blue;
+}
+
+#myCanvas {
+	border: 20px solid #8C1515;
+	background-color: #7CAFEE;
+}

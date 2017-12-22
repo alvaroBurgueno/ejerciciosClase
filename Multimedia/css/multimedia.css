@@ -1,0 +1,33 @@
+body{
+	background-color: #805C5C;
+}
+p{
+	margin-left: 50%;
+	margin-top: 50%;
+}
+video{
+	text-align: center;
+}
+.boton{
+	width: 100px;
+	height: 105px;
+	background-color: #D1AEAE;
+	margin-left: 10%;
+	border-radius: 30px;
+
+}
+.boton1{
+	width: 100px;
+	height: 105px;
+	background-color: #D1AEAE;
+	margin-left: 10%;
+	border-radius: 30px;
+}
+.video{
+	width: 300px;
+	height: 300px;
+	background-color: #D1AEAE;
+	border-radius: 30px;
+	margin-left: 40%;
+	margin-top: 5%;
+}

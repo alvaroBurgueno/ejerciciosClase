@@ -1,0 +1,88 @@
+<!-- video
+Ejercicio 1
+	Con botones personalizados para iniciar y pausar un vídeo.
+	Crear botones personalizados para iniciar y pausar un audio
+
+Ejercicio 2
+	Utilizar JavaScript para activar/desactivar los controles del vídeo
+	Mostrar por pantalla/alert/console el estado de los controles (Enabled/Disabled)
+Ejercicio 3
+	En la vista HTML se pide cambiar de vídeo pulsando un botón.
+	Es necesario tener 2 vídeos para que se alternen cada vez quese pulse un botón.
+Ejercicio 4
+	Duración del vídeo. Pulsando un botón se debe poder cambiar el tiempo de ejecución
+	del vídeo. Ejemplo: si pulso el botón se visualizará a partir del segundo 20.
+Ejercicio 5
+	Mostrar por pantalla/alert/console un mensaje cuando el usuario pulse play/pause en el vídeo.
+	Evento playing o pause
+Ejercicio 6
+	Mostrar por pantalla alert/console cuando el usuario cambie duración de vídeo.
+	Evento durationchange
+	 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Multimedia</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/multimedia.css">
+</head>
+<body>
+
+	 <div class="container">
+
+	 	<div class="row">
+	 		<div class="col-md-2">
+	 			<div onclick="change()" class="boton">
+	 				<svg width="100" height="100">
+		 				 <circle cx="50" cy="50" r="40" stroke="white" stroke-width="4" fill="black" />
+					</svg>
+	 			</div>
+				<div onclick="playVideo()" class="boton">
+					<svg width="100" height="100">
+					  <circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="4" fill="green" />
+					</svg>
+				</div>
+				<div onclick="pauseVideo()" class="boton1">
+				 		
+		 			<svg width="100" height="100">
+		 				 <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+					</svg>
+
+				</div>
+				<div onclick="checkState()" class="boton1">
+				 		
+		 			<svg width="100" height="100">
+		 				 <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="4" fill="hotpink"/>
+					</svg>
+
+				</div>
+				<div onclick="checkPlay()" class="boton1">
+				 		
+		 			<svg width="100" height="100">
+		 				 <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="blue"/>
+					</svg>
+
+				</div>
+			 </div>
+			 <div class="col-md-9">
+			 	<video id="myVideo" width="620" height="376" class="video"> <!-- controls -->
+					  <source src="media/conejito.mp4" type="video/mp4">
+					  Your browser does not support HTML5 video.
+				</video>
+			 </div>
+	 	</div>
+	 	<div class="row">
+	 		<p id="ultimoCambio">Cambios</p>
+	 	</div>
+	</div>
+	
+		
+
+	
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/multimedia.js"></script>
+</body>
+</html>

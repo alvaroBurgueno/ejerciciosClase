@@ -21,8 +21,6 @@ $(document).ready(function(){
 		$("#imagen2").hide();
 		$("#imagen3").show();
 	});
-
-
 });
 
 
