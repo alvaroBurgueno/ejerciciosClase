@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Palíndromo</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+	/*
+		Definir una función que determine si la cadena de texto 
+		que se le pasa como parámetro es un palíndromo, es decir, 
+		si se lee de la misma forma desde la izquierda y desde la derecha.
+		Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".
+	*/
+
+	/* OJO CUIDADO...CONSIDERA LOS ESPACIOS, POR LO QUE EL EJEMPLO DE PALÍNDROMO ANTERIOR NO LO CONSIDERA PALÍNDROMO*/
+
+	var palindromo = prompt("Escriba el palíndromo...o no: ");
+	esPalindromo(palindromo);
+
+
+	function esPalindromo(palindromo){
+		var palindromo2="";
+
+		for (var i = palindromo.length; i >= 0; i--) {
+			//document.write(palindromo.charAt(i));
+			palindromo2 += palindromo.charAt(i);
+		}
+		/*document.write(palindromo);
+		document.write(palindromo2);*/
+	
+
+		if (palindromo == palindromo2) {
+				document.write("Es un palíndromo integral.");
+			} else {
+				document.write("Para nada lo es. El palíndromo eres tú!");
+			}
+
+		} // fin función esPalindromo.
+		
+		
+
+	</script>
+</body>
+</html>

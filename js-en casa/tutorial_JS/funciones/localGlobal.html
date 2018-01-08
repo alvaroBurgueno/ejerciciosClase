@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Variables Globales y Locales</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	/*
+		VARIABLES LOCALES:
+		SE DECLARAN DENTRO DE UNA FUNCIÓN 
+		ÁMBITO ÚNICAMENTE DENTRO DE LA FUNCIÓN EN LA QUE SE DECLARA
+		DESAPARECE CUANDO ACABA LA FUNCIÓN
+
+		VARIABLES GLOBALES:
+		DEFINIDAS FUERA DE LAS FUNCIONES
+		ÁMBITO GLOBAL....EN TODA LA PÁGINA
+		ACCESIBLES DENTRO Y FUERA DE LAS FUNCIONES
+		DESAPARECEN CUANDO SE SALE DE LA PÁGINA
+
+	*/
+
+	function saludar() {
+		//var saludo = "Hola hola";
+		var saludo = "Hola hola";
+		alert(saludo);
+	}
+	var despido = "Hasta luego Lucas"
+	function despedida() {
+		//var despido = "Hasta luego Lucas";
+		alert(despido);
+	}
+	function pregunta() {
+		preg = "Ola k ase?";
+		alert(preg);
+	}
+	saludar();
+	pregunta();
+	despedida();
+
+
+
+
+	</script>
+</body>
+</html>

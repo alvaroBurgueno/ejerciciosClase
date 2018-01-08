@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Función Suma</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	/*
+		PARÁMETROS POR DEFECTO, SE LLAMA A UNA FUNCIÓN CON MENOS PARÁMETROS DE LOS DECLARADOS.
+		VALORES QUE FALTAN NO ESTÁN DEFINIDOS.
+	*/
+		function suma(a, b){
+			if (b === undefined) {
+				b = 0;
+			} 
+			return a+b;
+		}
+
+		var resultado = suma(4);
+		alert(resultado);
+
+	/*
+		PARÁMETROS POR EXCESO, CUANDO SE LLAMA A UNA FUNCIÓN CON MÁS PARÁMETROS DE LOS QUE HAN SIDO DECLARADOS
+		VALORES QUE NOS LLEGAN PUEDEN CAPTURARSE A TRAVÉS DE UN OBJETO (INCLUIDO EN LA FUNCIÓN) LLAMADA ARGUMENTS.
+	*/
+
+		function valores () {
+			alert(arguments.length);
+			for (var i = 0; i < arguments.length; i++) {
+				alert("La posición "+i+" está asociada con el parámetro "+arguments[i]);
+			}
+		}
+		valores(4,5,8,1,6);
+
+	</script>
+</body>
+</html>

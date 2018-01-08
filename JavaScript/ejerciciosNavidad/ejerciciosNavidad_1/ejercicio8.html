@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 8</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		/*
+			Escribe un programa que pida una frase 
+			y escriba cuántas de las letras que tiene son vocales
+		*/
+
+		var frase = prompt("Escriba lo que quiera: ");
+
+		var contador = 0;
+
+		for (var i = 0; i < frase.length; i++) {
+			if (frase.substring(i,i+1) === "a" || 
+				frase.substring(i,i+1) === "e" ||
+				frase.substring(i,i+1) === "i" ||
+				frase.substring(i,i+1) === "o" ||
+				frase.substring(i,i+1) === "u") {
+
+				contador++;
+			}
+		}
+		document.write(contador+" son vocales, del total de letras "+frase.length);
+		
+	</script>
+</body>
+</html>

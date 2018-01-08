@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos para Number</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/* CARACTERÍSTICAS
+			SOLO HAY UN TIPO DE DATO NUMÉRICO
+			PODEMOS REPRESENTAR: 34, 34.05, 132e5, 0XFF
+		*/
+
+		// CAMBIO DE BASE ENTRE NÚMEROS
+		// toString()
+		var base10 = 128;
+		alert(base10+" en base 2 "+base10.toString(2));
+		alert(base10+" en base 8 "+base10.toString(8));
+		alert(base10+" en base 16 "+base10.toString(16));
+
+		// NÚMERO INFINITO Y -INFINITO
+		var inf = 2;
+		/*while (inf != Infinity){
+			alert(inf);
+			inf*=inf;
+		}*/
+		var div1 = 2, div2 = 0;
+		alert(div1/div2);
+
+		// NOT A NUMBER: NaN
+		var atipico = 100/"casa";
+		var atipico2 = 100/"10";
+		alert("100/'casa' = "+atipico);
+		alert("100/'10' = "+atipico2);
+		alert("¿Es un NaN atípico?"+isNaN(atipico));
+		alert("¿Es un NaN atípico?"+isNaN(atipico2));
+		alert("¿De qué tipo es NaN? "+ typeof(atipico));
+
+		// NÚMEROS COMO OBJETOS
+		var num = 123;
+		var num2 = new Number(123); // lento en la ejecución, preferible la otra opción.
+		alert("num es de tipo "+typeof(num));
+		alert("num2 es de tipo "+typeof(num2));
+
+		// PROPIEDADES NUMBER
+		var maximo = Number.MAX_VALUE; alert("Máximo = "+maximo);
+		var minimo = Number.MIN_VALUE; alert("Mínimo = "+minimo);
+		var negInf = Number.NEGATIVE_INFINITY; alert("Infinito Negativo = "+negInf);
+		var posInf = Number.POSITIVE_INFINITY; alert("Infinito Positivo = "+posInf);
+		var numNan = Number.NaN; alert("El NaN = "+numNan);
+
+		// MÉTODOS NUMBER
+		// toFixed(<num decimales>): cadena con el número específico de decimales indicando
+		var x = 9.875548;
+		alert(x.toFixed(0)); // redondea a 10
+		alert(x.toFixed(2)); // redondea a 9.88
+		alert(x.toFixed(3)); // redondea a 9.876
+		//alert(x.toPrecision(0));
+		alert(x.toPrecision(2));
+		alert(x.toPrecision(3));
+		// toExponential --> devuelve cadena con el número redondeado a notación científica.
+		alert(x.toExponential(2));
+		// valueOf: devuelve el valor primitivo de un Objeto
+		// toString: devuelve la cadena de un número
+		var j = 123;
+		alert(j.toString());
+		alert((123).toString());
+		alert((123+7).toString());
+		// MÉTODOS GLOBALES PARA CONVERTIR VARIABLES EN NÚMEROS
+		// Number()--> devuelve el valor numérico de una variable
+		alert(Number(true)); // devuelve 1
+		alert(Number(false)); // devuelve 0
+		alert(Number(Date())); // devuelve los milisegundos desde el 1/1/1970 hasta el día de hoy
+		alert(Number("10")); // devuelve el número de la cadena
+		alert(Number("casa")); // devuelve NaN
+		// parseInt \ parseFloat
+		alert(parseInt("10.8")); // devuelve 10
+		alert(parseFloat("10.8")); // devuelve 10.8
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

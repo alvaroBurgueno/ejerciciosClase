@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 7</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		/*
+			Escribe un programa que pida una frase 
+			y escriba las vocales que aparecen
+		*/
+
+
+		var frase = prompt("Escriba lo que quiera: ");
+
+		for (var i = 0; i < frase.length; i++) {
+			if (frase.substring(i,i+1) === "a" || 
+				frase.substring(i,i+1) === "e" ||
+				frase.substring(i,i+1) === "i" ||
+				frase.substring(i,i+1) === "o" ||
+				frase.substring(i,i+1) === "u") {
+
+				document.write(frase.substring(i,i+1));
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Función Toggle Máximo Nivel</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<div class="boton" id="btn" onclick="toggle()">Pínchame.</div>
+	<span id="photo1">
+		<img src="img/agaporni.png">
+	</span>
+
+
+	<script type="text/javascript">
+		
+		var boton = document.getElementById(btn);
+		var photo1 = document.getElementById(photo1);
+var cambio=false;
+		function toggle(cambio){
+			
+			if (cambio==true) {
+				photo1.innerHTML = "<img src='img/agaporni2.png'>";
+			} else {
+				photo1.innerHTML = "<img src='img/agaporni.png'>";
+
+			}
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body{background-color: #E6B5B5;}
+
+div img{
+	max-height: 200px;
+	max-width: 100px;
+}
+
+
+.boton{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }

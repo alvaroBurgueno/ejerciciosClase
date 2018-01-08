@@ -1,0 +1,25 @@
+body{
+	background-color: #5959B5;
+}
+
+div .p{
+	color: #C25A5A;
+}
+
+.negrita{
+	background-color: white;
+	color: red;
+}
+
+.blanquita {
+	background-color: hotpink;
+	color: darkkhaki;
+}
+
+.thumb{
+	width: 200px;
+	transition: 300ms all ease;
+}
+.grande{
+	width: 100px;
+}

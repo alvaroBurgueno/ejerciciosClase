@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Validación Formulario</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/formulario.css">
+</head>
+<body>
+	<h1>Formulario</h1>
+	<form action="procesar.php" method="post" id="miFormulario">
+		<table>
+			<tr>
+				<td>Nombre: </td>
+				<td><input type="text" name="name" id="name" /></td>
+			</tr>
+			<tr>
+				<td>Teléfono: </td>
+				<td><input type="text" name="phone" id="phone" /></td>
+			</tr>
+			<tr>
+				<td>Fecha de Nacimiento: </td>
+				<td>
+					<!-- <input type="date" name="fecha"> -->
+					<input type="text" name="day" id="day" size="2" placeholder="dd" />
+					<input type="text" name="month" id="month" size="2" placeholder="mm" />
+					<input type="text" name="year" id="year" size="4" placeholder="aaaa" />
+				</td>
+			</tr>
+			<tr>
+				<td>Sexo: </td>
+				<td>
+					<input type="radio" name="sex" value="H" /> Hombre
+					<input type="radio" name="sex" value="M" /> Mujer
+				</td>
+			</tr>
+			<tr>
+				<td>Mayor de Edad:</td>
+				<td>
+					<input type="checkbox" name="edad" id="edad">
+				</td>
+			</tr>
+		</table>
+		<p>
+			<input type="submit" value="Enviar" id="enviar">
+			<input type="reset" value="Limpiar Datos" id="borrar">
+		</p>
+	</form>
+
+	<script type="text/javascript">
+		var formulario = document.getElementById("miFormulario");
+		window.onload = iniciar;
+
+		function iniciar() {
+			document.getElementById("enviar").addEventListener('click', validar, false);
+		}
+
+		function validaNombre() {
+			var elemento = document.getElementById("name");
+			if (elemento.value == "") {
+				alert("El campo Nombre no puede estar vacío.");
+				error(elemento);
+				return false;
+			}
+			limpiarError(elemento);
+			return true;
+		}
+
+		function validaTelefono() {
+			var elemento = document.getElementById("phone");
+			if (elemento.value == "") {
+				alert("El campo Teléfono no puede estar vacío.");
+				error(elemento);
+				return false;
+			}
+			if (isNaN(elemento.value)) {
+				alert("El campo teléfono tiene que ser de tipo numérico.");
+				error(elemento);
+				return false;
+			}
+			limpiarError(elemento);
+			return true;
+		}
+
+		function validaFecha() {
+			var dia = document.getElementById("day").value;
+			var mes = document.getElementById("month").value;
+			var anio = document.getElementById("year").value;
+			var fecha = new Date(anio, mes, dia);
+
+			if (isNaN(fecha)) {
+				alert("Los campos de la fecha son incorrectos.");
+				return false;
+			}
+			return true;
+		}
+
+		function validaCheck() {
+			var campoCheck = document.getElementById("edad");
+
+			if (!campoCheck.checked) {
+				alert("Debes de ser mayor de edad para poder entrar.");
+				return false;
+			}
+			return true;
+		}
+
+		function validar(e) {
+			if (validaNombre() == true && validaTelefono() == true && validaFecha() == true && validaCheck() == true && confirm("Pulse aceptar si está seguro de enviar el Formulario.")) {
+				return true;
+			} else {
+				e.preventDefault();
+				return false;
+			}
+		}
+
+		function error(elemento) {
+			elemento.className = "error";
+			elemento.focus();
+		}
+
+		function limpiarError(elemento) {
+			elemento.className = "";
+		}
+
+
+	</script>
+</body>
+</html>

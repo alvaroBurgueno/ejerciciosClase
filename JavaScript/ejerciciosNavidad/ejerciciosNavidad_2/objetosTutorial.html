@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tutorial Objetos</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container py-2">
+		<p class="lead">Nombre Usuario</p>
+		<form>
+			<input id="nombre" type="text" placeholder="Nombre Usuario" class="form-control my-2">
+			<input id="edad" type="text" placeholder="Edad Usuario" class="form-control my-2">
+			<button id="btn" class="btn btn-success" type="reset" onclick="capturar()">Agregar</button>
+		</form>
+	</div>
+	<div class="container">
+		<table id="table" class="table">
+			<thead class="thead-inverse">
+				<tr>
+					<th>Nombre</th>
+					<th>Edad</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		function capturar(){
+			function Persona(nombre, edad){
+				this.nombre = nombre;
+				this.edad = edad;
+			}
+			var nombrePersona = document.getElementById("nombre").value;
+			var edadPersona = document.getElementById("edad").value;
+
+			nuevaPersona = new Persona (nombrePersona, edadPersona);
+			console.log(nuevaPersona);
+			agregar();
+		}
+		var baseDatos = [];
+		function agregar() {
+			baseDatos.push(nuevaPersona);
+			console.log(baseDatos);
+		}
+
+		/*
+		sin constructor, habría que declarar uno a uno cada uno de los objetos.
+		el constructor permite que se declare un objeto vacío, y 
+		var perro={nombre:"rex", edad:5, vivo:true};
+		var perro={nombre:"pipo", edad:2, vivo:true};*/
+
+	</script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

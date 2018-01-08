@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Foto ON/OFF</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<div class="boton" id="boton" onclick="toggle()">Pínchame</div>
+	<span id="photo1">
+		<img src="img/agaporni.png">
+	</span>
+	<!-- <div><img src="img/agaporni2.png" id="phpto2"></div> -->
+	
+
+
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("boton");
+		var photo1 = document.getElementById("photo1");
+
+		var cambio = false;
+		function toggle(){
+			if (cambio==false) {
+				cambio = true;
+				photo1.innerHTML = "<img src='img/agaporni2.png'>";
+				boton.innerHTML = "Pínchame más";
+				}
+			else{
+				cambio = false;
+				photo1.innerHTML = "<img src='img/agaporni.png'>";
+				}
+		}
+
+
+	</script>
+</body>
+</html>

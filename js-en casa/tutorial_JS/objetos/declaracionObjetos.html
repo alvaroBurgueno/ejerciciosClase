@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Declaración Objetos</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		// 1. DEFINIR Y CREAR UN OBJETO SIMPLE UTILIZANDO UN LITERAL
+		var persona1 = {
+			nombre: "Alvaro",
+			apellido: "Pérez",
+			edad:21
+		}
+		// DEFINIR Y CREAR UN OBJETO SIMPLE UTILIZANDO LA PALABRA NEW
+		var persona2 = new Object();
+		persona2.nombre = "Charles";
+		persona2.apellido = "Babbage";
+		persona2.edad = 21;
+		// DEFINIR UN CONSTRUCTOR DE OBJETO Y CREAR OBJETOS DEL TIPO CONSTRUIDO
+		function Persona (nom, ape, edad) {
+			this.nombre = nom;
+			this.apellido = ape;
+			this.edad = edad;
+		}
+		var persona3 = new Persona("Perico", "de los Palotes", 32);
+		console.log(persona3);
+		/*
+			THIS (palabra reservada):
+			HACE REFERENCIA AL PROPIETARIO DE LA FUNCIÓN QUE ESTÁ INVOCÁNDOSE
+			HACE REFERENCIA AL OBJETO DONDE LA FUNCIÓN ES UN MÉTODO
+
+		*/
+		
+		/*
+			SINTAXIS
+			objeto.propiedad;
+			objeto["propiedad"];
+			objeto[expresion]
+
+			RECORRER LAS PROPIEDADES DE UN OBJETO
+			for (<nombre_variable> in <nombre_objeto>) {
+				<nombre_objeto>[nombre_variable]
+			}						
+		*/
+			for (x in persona3) {
+				alert(persona3[x]);
+			}
+		/*
+		AÑADIR UNA NUEVA PROPIEDAD A UN OBJETO
+		<nombre_objeto>.<nombre_propiedad> = <valor_propiedad>;
+		*/
+		persona1.nacionalidad = "Inglaterra";
+		alert(persona1.nacionalidad);
+		/*
+		ELIMINAR PROPIEDAD DE UN OBJETO
+		delete <nombre_objeto>.<nombre_propiedad>;
+		*/
+		delete persona1.nacionalidad;
+		for (x in persona3) {
+				alert(persona3[x]);
+			}
+
+	</script>
+</body>
+</html>
