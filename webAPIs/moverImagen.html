@@ -1,0 +1,35 @@
+<!-- 
+Ejercicio:
+MOVER UNA IMAGEN ENTRE DOS DIV DIFERENTES
+EVENTOS: DRAGSTART, DRAGOVER,
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mover Imagen</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<p>This example uses the HTML DOM to assign "ondragstart", "ondragend", "ondragover" and "ondrop" events to the document object.</p>
+
+	<p>Drag the p element back and forth between the two rectangles:</p>
+
+	<div class="droptarget">
+	  <p draggable="true" id="dragtarget">Drag me!</p>
+	</div>
+
+	<div class="droptarget"></div>
+
+	<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+	<p id="demo"></p>
+
+
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
+
+

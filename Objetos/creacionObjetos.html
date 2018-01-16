@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Creación de Objetos</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript">
+		
+		function Coche (nombre,potencia, color) {
+			this.nombre = nombre
+			this.potencia = 0;
+			this.color = color;
+
+			Coche.prototype.arrancar = function() {
+				alert("Arranco el coche");
+			};
+			Coche.prototype.circular = function() {
+				alert("Circulo con el coche");
+			};
+			Coche.prototype.girar = function() {
+				alert("Giro el coche");
+			};
+
+		}
+
+		function Utilitario(potencia, color, utilidad) {
+			Coche.call(this, potencia);
+			Coche.call(this, color);
+			this.utilidad = utilidad;
+
+			//Estudiante.prototype = Object.create(Persona.prototype);
+			Utilitario.prototype = Object.create(Coche.prototype);
+			Utilitario.prototype.constructor = Utilitario;
+
+			/*
+			REEMPLAZAR MÉTODO DEL QUE HEREDA
+			Estudiante.prototype.diHola = function(){
+			  alert("Hola, Soy " + this.primerNombre + ". Estoy estudiando " + this.asignatura + ".");
+			};
+			*/
+			Utilitario.prototype.arrancar = function() {
+				alert("Soy un utilitario y arranco mal.");
+			}
+			Utilitario.prototype.circular = function() {
+				alert("Soy un utilitario y circulo lento.");
+			}
+
+		}
+
+		function Deportivo(nombre, potencia, color, estilo) {
+			Coche.call(this, nombre);
+			Coche.call(this, potencia);
+			Coche.call(this, color);
+			this.estilo = estilo;
+
+			Deportivo.prototype.arrancar = function() {
+				alert("Soy un deportivo y arranco guay.");
+			}
+			Deportivo.prototype.circular = function() {
+				alert("Soy un deportivo y ciruclo de puta madre.");
+			}
+		}
+
+		var deportivo1 = new Deportivo ("Ferrari", 200, "Guay");
+		//console.log(deportivo1.nombre);
+
+		deportivo1.arrancar();
+
+		// Comprobar que realmente hereda de Coche.
+		//alert(deportivo1 instanceof Deportivo);
+		alert(deportivo1 instanceof Coche);
+
+	</script>
+</body>
+</html>

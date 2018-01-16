@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Local Storage</title>
+</head>
+<body>
+	
+
+	<form action="Valid1.html" id="Formulario" >
+		<p>Almacenamiento de valores de sesión</p>
+		<input type="text" id="clave1" />
+		<input type="button" value="Grabar" onclick="escribirClave('Dato');" /><br />
+		<input type="text" id="claveLeida" />
+		<input type="button" value="Leer" onclick="leerClave('Dato');" />
+	</form>
+
+
+	<script type="text/javascript">
+	/*Almacenamiento y recuperación de datos en una sesión
+	Solo soporta almacenar textos, string.
+	*/
+
+/*	function grabarClaveSesion(clave) {
+		var valor =  document.getElementById("inputTemporal").value;
+		window.sessionStorage.setItem(clave, valor);
+	}
+
+	function leerClaveSesion(clave) {
+		var valor =  window.sessionStorage.getItem(clave);
+		valor =document.getElementById("valorTemporal").value;
+
+	}*/
+
+	var resultados = document.getElementById("resultado");
+	var datos = { 'one': 1, 'two': 2, 'three': 3, 'four': 4};
+	// Guardar los elementos del JSON en localstorage
+	var password = "password";
+	localstorage.setItem(password, JSON.stringify(datos));
+	// Recuperar los elementos del Storage.
+	var datos_recuperados = localstorage.getItem(password);
+	// Añadir listener para el evento click
+	document.getElementById("boton").addEventListener("click");
+	resultado.innerHTML = "one" + JSON.parse(datos_recuperados).one;
+	resultado.innerHTML = "one" + JSON.parse(datos_recuperados).two;
+
+	console.log()
+
+	</script>
+</body>
+</html>

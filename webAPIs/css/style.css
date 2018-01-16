@@ -1,0 +1,12 @@
+.droptarget {
+    float: left; 
+    width: 400px; 
+    height: 150px;
+    margin: 15px;
+    padding: 10px;
+    border: 3px solid #aaaaaa;
+}
+img {
+	width: 400px; 
+    height: 150px;
+}

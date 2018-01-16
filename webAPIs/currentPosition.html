@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="coordenadas"></div>
+
+
+	<script type="text/javascript">
+		
+
+		function mostrarPosicion(position) {
+			coordenadas.innerHTML = "latitud: " + position.coords.latitude + 
+									"<br> longitud: " + position.coords.longitude +".";
+		}
+
+		var coordenadas = document.getElementById("coordenadas");
+		var boton = document.getElementById("boton");
+
+		
+		function obtenerLocalizacion() {
+			// comprobar si navegador admite geo
+			if (navigator.geolocation == true) {
+				// llamar a la función getCurrentPosition
+				navigator.geolocation.getCurrentPosition(mostrarPosicion);
+			} else {
+				coordenadas.innerHTML = "Tu navegador no admite geo.";
+			}
+
+		}
+
+
+
+/*		  var options = {
+		  enableHighAccuracy: true,
+		  timeout: 5000,
+		  maximumAge: 0
+		};
+
+		function success(pos) {
+		  var crd = pos.coords;
+
+		  console.log('Your current position is:');
+		  console.log('Latitude : ' + crd.latitude);
+		  console.log('Longitude: ' + crd.longitude);
+		  console.log('More or less ' + crd.accuracy + ' meters.');
+
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 4,
+		    center: {lat: -33, lng: 151},
+		    disableDefaultUI: true
+		  });
+
+		};
+
+		function error(err) {
+		  console.warn('ERROR(' + err.code + '): ' + err.message);
+		};
+
+		function initMap() {
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 4,
+		    center: {lat: -33, lng: 151},
+		    disableDefaultUI: true
+		  });
+		}
+
+		navigator.geolocation.getCurrentPosition(success, error, options);*/
+
+
+
+
+
+
+	</script>
+</body>
+</html>
