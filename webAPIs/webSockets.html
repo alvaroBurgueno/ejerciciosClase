@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Sockets</title>
+</head>
+<body>
+	<input type="button" id="btn1" value="Retroceder">
+	<input type="button" id="btn2" value="Avanzar">
+	<input type="button" id="btn3" value="Retroceder 3">
+
+	<script type="text/javascript">
+
+
+		function retroceder() {
+			window.history.back();
+		}
+		function retroceder3() {
+			window.history.back(-3);
+		}
+		function avanzar() {
+			window.history.forward();
+		}
+
+		document.getElementById("btn1").addEventListener("click", retroceder());
+		document.getElementById("btn2").addEventListener("click", avanzar());
+		document.getElementById("btn3").addEventListener("click", retroceder3());
+
+/*		// Creamos una variable para almacenar las referencias
+		var socket = new WebSocket("ws://yourdomain/yourservice");
+
+		// Asignamos el evento onopen
+		socket.onopen = function(){
+		alert("Socket abierto con servicio Ajedrez “on-line");
+		}
+		socket.postMessage("Blancas mueven: d4");
+
+		socket.onmessage = function(event) {
+		alert("Respuesta de las negras: " + event.data);
+		};*/
+	</script>
+</body>
+</html>

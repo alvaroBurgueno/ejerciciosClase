@@ -40,9 +40,11 @@
 	// Recuperar los elementos del Storage.
 	var datos_recuperados = localstorage.getItem(password);
 	// Añadir listener para el evento click
-	document.getElementById("boton").addEventListener("click");
-	resultado.innerHTML = "one" + JSON.parse(datos_recuperados).one;
-	resultado.innerHTML = "one" + JSON.parse(datos_recuperados).two;
+	document.getElementById("boton").addEventListener("click", function(){
+		resultado.innerHTML = "one" + JSON.parse(datos_recuperados).one;
+		resultado.innerHTML = "one" + JSON.parse(datos_recuperados).two;
+	});
+	
 
 	console.log()
 

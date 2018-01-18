@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Factorial</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*
+			Se pide implementar JS para pintar por consola
+			1) factorial (numero)
+			2) funcion gritar (numero, letra)
+				Pinta por consola tantas veces seguidas como el doble del parámetro número
+			3) multipop: se le pasa un array (lista, golpes)
+				multipop([3, 8, -5], 2) -> devuelve [3]; 
+		*/
+
+		/*
+
+		var numero = prompt("Número: ");
+		var num = numero-1;
+
+		for (num; num > 0; num--) {
+			
+			numero*= num;
+		}
+		document.write(numero);
+
+		---------------------
+
+		if ( paso == 0) { // paso base 0
+			return 0;
+		} else {
+			if ( paso == 1) { // paso base 1
+				return fibonacci(0) + 1;
+			} else {
+				// Paso Recursivo
+				return fibonacci(paso-1) + fibonacci(paso-2);
+			}
+		}
+		*/
+
+		function factorial ( num ) {
+			if ( num == 0 || num == 1) {
+				return 1;
+			} else {
+				return num * factorial(num - 1);
+			}
+		}
+
+		console.log(factorial(3));
+
+
+	</script>
+</body>
+</html>

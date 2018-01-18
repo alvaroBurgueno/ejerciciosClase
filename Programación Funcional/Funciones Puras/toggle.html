@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Toggle</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+		// FUNCIÓN NO PURA
+		var encendido = true;
+		function alternar() {
+			if (encendido) {
+				encendido = false;
+			} else {
+				encendido = true;
+			}
+			// si encendido es igual a 1, le pones un 0 a "encendido" y un 1 si no es igual a 1.
+			// Válido solo para un if-else. Uso concreto para este caso.
+			encendido = (encendido == 1) ? 0 : 1; // es equivalente al condicional de arriba.
+		}
+		// FUNCIÓN PURA
+		var encendido = 0;
+		function alternar(estado) {
+			return (estado == 1) ? 0 : 1; 
+		}
+		// CAMBIAR DE ESTADO EL INTERRUPTOR
+		encendido = alternar(encendido);
+		console.log(encendido);
+		// CAMBIAR DE ESTADO EL INTERRUPTOR
+		encendido = alternar(encendido);
+		console.log(encendido);
+
+	/*	function responder(mensaje) {
+			if (mensaje == "42") {
+				return "Correcto";
+			} else {
+				return "Incorrecto";
+			}
+		}
+		var entradaUsuario = prompt("¿Sentido de la vida?");
+
+		var salidaConsola = responder(entradaUsuario);
+		console.log(salidaConsola);*/
+	</script>
+</body>
+</html>

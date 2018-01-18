@@ -1,0 +1,78 @@
+<!-- 
+
+
+
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		// programación NO funcional, es ITERATIVA
+		var resultado = 0;
+		var resultadoAnterior = 0;
+		var resultadoAnterior2 = 0;
+
+		for (var i = 0; i < 5; i++) {
+			if ( i == 0 ) {
+				resultado++;
+			} else {
+				resultadoAnterior2 = resultadoAnterior; // guardo una copia del resultado anterior
+				resultado += resultadoAnterior2;			// actualizo mi nuevo resultado
+				resultadoAnterior = resultadoAnterior2;			// Restauro la copia en el anterior
+			}
+		}
+		// programación recursiva ; yo = yo + misCircunstancias --> Definición Recursiva
+		// yo = (yo + misCircunstancias) + misCircunstancias
+		// yo = ((yo + misCircunstancias) + misCircunstancias) + misCircunstancias; ........etc etc
+		/*
+		Paso Base (P0):
+		X = 0
+		Paso Recursivo (Pn):
+		X = X + 1 	
+		Xi = Xi - 1 + 1
+		--
+		X0 = 0
+		X1 = X0 + 1 = 0 + 1 = 1
+		X2 = X1 +1 = X0 + 1 +1 = 0 + 1 + 1 = 2
+
+
+
+		PASO BASE
+		X0: 0 ->1
+
+		PASO RECURSIVO
+		Xi = Xi-1 + Xi-2
+		( i >= 2 )
+		*/
+		function fibonacci(paso) {
+			// Paso Base
+			/*if ( paso == 0 || paso == 1) {
+				resSiguiente = 1;
+			} else { // Paso Recursivo
+				resSiguiente = resAnterior + resAntAnterior;
+			}
+			return resSiguiente;
+		}*/
+		if ( paso == 0) { // paso base 0
+			return 0;
+		} else {
+			if ( paso == 1) { // paso base 1
+				return fibonacci(0) + 1;
+			} else {
+				// Paso Recursivo
+				return fibonacci(paso-1) + fibonacci(paso-2);
+			}
+		}
+		// 0 0 1 2 3 5 8 13 21
+		console.log(fibonacci(2));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebWorker</title>
+</head>
+<body>
+	<p id="resultado">Resultado:</p>
+	<input type="button" name="btn" id="btn">
+	<button id="iniciarWorker"></button>
+	<button id=""></button>
+	<p id="mensajeWorker"></p>
+
+
+	<script type="text/javascript">
+		/*
+		HTML:
+			Botón para iniciar el worker desde el JS principal
+			Párrafo para escribir el resultado
+		JS principal
+			Función para iniciar el Worker
+				Comprobar que el navegador soporta Web Worker
+				Crear el Web Worker
+				Manejar el evento "message" para recibir el mensaje que llega del JS secundario y añadir el 
+				resultado al HTML
+				Función para parar el Worker
+		JS Secundario
+			Generar los 3 caracteres y,z,w
+			Enviar dichos caracteres al JS principal utilizando el método postmessage (mensaje)
+		*/
+		function iniciarWorker() {
+			//Comprobar que el browser soporta webWorker
+			if (Worker) {
+				// Creación WebWorker pasando por parámetro el JS secundario
+				worker = new Worker("js/webWorkerSecundario.js");
+				// Manejar el evento "message" para Recibir el mensaje
+				worker.addEventListener("message", function(event){
+					var y = event.data[0];
+					var z = event.data[1];
+					var w = event.data[2];
+					var x = (y*z)*w;
+					//  Resultado
+					document.getElementById("resultado").innerHTML="Resultado "+x;
+				});
+			} else {
+				document.getElementById("resultado").innerHTML="Error de Navegador";
+			}
+		function pararWorker() {
+			worker.terminate();
+			worker = undefined;
+		}
+
+
+/*			if (window.Worker) {
+				// Crear el Worker
+				w = new Worker("js/webWorkerSecundario.js");
+				w.addEventListener("message", function(event))
+
+				datos.onchange = function() {
+					  w.postMessage(datos); // Sending message as an array to the worker
+					  console.log('Message posted to worker');
+				};
+				w.onmessage = function(e) {
+					var message = "Mensaje del Worker: " + e.data;
+					document.getElementById("mensajeWorker").innerHTML = message;
+					console.log('Message received from worker');
+				};
+			}
+		}*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clausure</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function abaco() {
+			function sumar(cantidad, direccion) {
+				/*resultado = (direccion == "I") ?
+										resultado - cantidad :
+										resultado + cantidad;*/
+				// Si la direccion es "I" se resta la cantidad y si no se suma
+				resultado += (direccion =="I") ? -cantidad : cantidad; // lo mismo que lo de arriba.
+			}
+		}
+		var num1 = parseInt(prompt("Introduzca primer número"));
+		var operacion = prompt("Introduzca operación");
+		var num2 = parseInt(prompt("Introduzca segundo número"));
+		
+
+		function calculadora(num1, num2, Operacion) {
+			var resultado = 0;
+			
+			function sumar() { // clousure -> función interna dentro
+				resultado = num1 + num2;
+			}
+			function restar() { // clousure -> función interna dentro
+				resultado = num1 - num2;
+			}
+			function multiplicar() { // clousure -> función interna dentro
+				resultado = num1 *num2;
+			}
+			function dividir() { // clousure -> función interna dentro
+				resultado = num1 / num2;
+			}
+			switch (Operacion) {
+				case "+":
+					sumar();
+					break;
+				case "-":
+					sumar();
+					break;
+				case "*":
+					multiplicar();
+					break;
+				case "/":
+					dividir();
+					break;
+				default:
+    				console.log("Sorry, we are out of your mind");
+			}
+
+
+			return resultado;	
+		}
+		console.log(calculadora(num1,num2,operacion));
+		
+
+
+	</script>
+</body>
+</html>

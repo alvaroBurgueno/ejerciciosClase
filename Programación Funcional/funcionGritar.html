@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>función gritar</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			2) funcion gritar (numero, letra)
+			Pinta por consola tantas veces seguidas como el doble del parámetro número
+		*/
+
+		function gritar (num, letra) {
+			if (num == 0) {
+				return "!";
+			}
+/*			if (num == 1) {
+				return letra + "!";
+			}*/
+			if (num >= 1) {
+				return letra + letra + gritar(num-1, letra);
+			}
+		}
+
+		console.log(gritar(2, "a"));
+
+
+	</script>
+</body>
+</html>
