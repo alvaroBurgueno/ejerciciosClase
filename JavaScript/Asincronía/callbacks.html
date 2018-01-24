@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callbacks</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		// Sin controlar la asincronía (síncrono)
+		function addToArraySync(dato, lista) {
+			//Si el array no es un array
+			if (!Array.isArray(lista)) {
+				console.log("La lista no es un array.");
+			} else {
+				lista.push(dato);
+			}
+		}
+		// Interfaz de la función es: Nombre de la función, parámetros que espera y lo que e
+		/*
+		data: anything
+		array: []
+		callback: function(argument1, argument2)
+		*/
+		// Asíncrona
+		function addToArrayAsync (data, array, funcionCallback) {
+			if (!Array.isArray(lista)) {
+				//console.log("La lista no es un array.");
+				funcionCallback(new Error('No existe el array'), null); // el new Error es opcional.
+			} else {
+				lista.push(dato);
+				funcionCallback(null, lista);
+			}
+		}
+
+
+		var hamburguesa = [];
+
+		function callBackHamburguesas(mensajeError,lista) {
+			// Si hay error
+			if (mesanjeError !== null) {
+				return console.log(mensajeError);
+			} else {
+				console.log(lista);
+			}
+		};
+
+
+		addToArrayAsync("pan de abajo", hamburguesa, callBackHamburguesas);
+		addToArrayAsync("chicha", hamburguesa, callBackHamburguesas);
+
+
+
+
+	</script>
+</body>
+</html>

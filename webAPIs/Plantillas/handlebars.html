@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Handlebars</title>
+</head>
+<body>
+
+<script id="clave" type="text/x-handlebars-template">
+		 <p>Me llamo {{name}}. My address is {{street}} {{number}}.</p>
+</script> 
+
+	<!--Your new content will be displayed in here-->
+	<div class="content-placeholder"></div>
+
+
+	<script type="text/javascript" src="js/jQuery v3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
+	<script type="text/javascript">
+		$(function () {
+
+		  // Grab the template script
+		 // var theTemplateScript = "Me llamo {{name}}. My address is {{street}} {{number}}.";
+		 var theTemplateScript = $("#clave").html();
+		 
+		  
+		  // Compile the template
+		  var theTemplate = Handlebars.compile(theTemplateScript);
+
+		  // Define our data object
+		  var dato = {
+		    "name": "Álvaro",
+		    "street": "Calle Piruleta",
+		    "number": "127"
+		  };
+
+		  // Pass our data to the template
+		  var theCompiledHtml = theTemplate(dato);
+
+		  // Add the compiled html to the page
+		  $('.content-placeholder').html(theCompiledHtml);
+		});
+
+	</script>
+</body>
+</html>

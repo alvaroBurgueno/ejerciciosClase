@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Plantilla Mustache</title>
+</head>
+<body>
+	<p id="clave"></p>
+	<script type="text/javascript" src="js/jQuery v3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/mustache.min.js"></script>
+	<script type="text/javascript">
+
+		// Para usar Mustache es necesario un objeto
+		var Persona = {
+			nombre:"Álvaro",
+			direccion:"Calle Piruleta",
+			NIF:"11133354R",
+			telefono:666555111,
+			email:"correo@gmail.com"
+		};
+        function cargaDatos(){
+            var datos = Mustache.render("{{nombre}}<br>{{direccion}}<br>{{NIF}}<br>{{telefono}}<br>{{email}}", Persona);
+            $('#clave').html(datos);
+        }
+ 
+        $( document ).ready(function() {
+            cargaDatos();
+        });
+
+
+		//var output = Mustache.render("{{title}} spends {{calc}}", view);
+	</script>
+</body>
+</html>

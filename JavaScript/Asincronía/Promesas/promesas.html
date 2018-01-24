@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promesas</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+
+
+		function addToArrayPromise(dato,lista) {
+			// var promise = new Promise ( función con 2 parámetros, que a su vez son funciones
+			//manejadoras, una para el caso de que vaya todo bien y otra por si algo va mal);
+
+		    var promise = new Promise(function (todoOK, algoMal) { // dentro de la promise tiene que haber una función
+		    
+		    lista.push(dato); // se añade el dato a la lista
+		    todoOK(lista); 
+
+		    if (!lista) {
+		      algoMal('No existe array');
+		    }
+		    return promise;
+		  });
+		  
+		  var hamburguesa = [];
+
+		  function pintarHamburguesa() {
+		  	console.log(hamburguesa);
+		  }
+		  function pintarError() {
+		  	console.log('Error, no se ha podido aumentar la Hamburguesa.');
+		  }
+		  addToArrayPromise("cebolla", hamburguesa)
+		  		.then(pintarHamburguesa); 
+		  		.catch(pintarError);
+		  		// sin paréntesis para no ejecutar la función, porque si no, dará undefined.
+		  		// sin los paréntesis solo se pasan los parámetros de la función
+		}
+	</script>
+</body>
+</html>

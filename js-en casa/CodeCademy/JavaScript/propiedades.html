@@ -22,7 +22,36 @@
 		//Find a method in the JavaScript math library that returns the smallest integer greater than or equal to a decimal number.
 		// Devuelve el entero superior
 		console.log(Math.ceil(43.1));
-		
+
+		// USO DE CONDICIONALES 
+		let moonPhase='full' ;
+		let isFoggyNight =  false;
+
+		// IF-ELSE
+		if (moonPhase === 'full' || isFoggyNight) {
+			console.log('Se convierte en hombre-lobo.')
+		} else if (moonPhase === 'mostly full') {
+			console.log('Arms and legs are getting hairier.')
+		} else if (moonPhase === 'mostly new') {
+			console.log('Back on two feet.')
+		} else {
+		console.log('Invalid moon phase.')
+		}
+		// SWITCH - CASE
+		switch (moonPhase) {
+		  case 'full':
+		    console.log('Se convierte en hombre-lobo.')
+		    break;
+		  case 'mostly full':
+		    console.log('Arms and legs are getting hairier.')
+		    break;
+		  case 'mostly new':
+		    console.log('Back on two feet.')
+		    break;
+		  default:
+		    console.log('Invalid moonPhase');
+		    break;
+		}
 
 
 

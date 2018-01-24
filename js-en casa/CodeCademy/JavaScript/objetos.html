@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// Para crear una persona en concreto
+		var person = {
+			name: "John",
+			age: 42,
+			favColor: "green"
+		};
+
+		// Función Constructora de la Clase Objeto. Para crear nuevos objetos del prototipo
+		function Person(name, age, color) {
+		  this.name = name;
+		  this.age = age;
+		  this.favColor = color;
+		}
+
+		var p1 = new Person("John", 42, "green");
+		var p2 = new Person("Amy", 21, "red");
+
+		document.write(p1.age+"<br/>"+p2.name); 	// Outputs 42 + Outputs "Amy"
+		//p1 and p2 are now objects of the person type. Their properties are assigned to the corresponding values.
+
+		//Use the object literal or initializer syntax to create single objects. Solo para crear objetos directamente.
+		var John = {name: "John", age: 25};
+		var James = {name: "James", age: 21};
+/*		OTRA FORMA EQUIVALENTE
+		var John = {
+		  name: "John",
+		  age: 25
+		};
+		var James = {
+		  name: "James",
+		  age: 21
+		};					*/
+		//------------------------AÑADIENDO MÉTODOS AL PROTOTIPO---------------------------------------------------------------
+
+/*		A method is a function, belonging to an object. It can be referenced using the this keyword.
+		The this keyword is used as a reference to the current object, meaning that you can access the objects properties and methods using it.
+*/
+		// The "this" keyword in the method means: --> THE CURRENT OBJECT
+
+		function Coche(name, color, year) {
+		  this.name = name;  
+		  this.color = color;
+		  this.year = year;
+		  this.changeName = function (name) {
+		    this.name = name;
+		  }
+		}
+
+		var coche1 = new Coche("Seat", "Granate", 1997);
+		// Aquí abajo ya se hace uso del método creado cambiarNombre-> Llamada a la función.
+		coche1.changeName("Ferrari"); //Now coche1.name equals to "Ferrari"
+		document.write("<p>"+coche1.name+"</p>");
+
+/*		You can also define the function outside of the constructor function and associate it with the object.
+		As you can see, we have assigned the object's yearOfBirth property to the bornYear function.
+		The this keyword is used to access the age property of the object, which is going to call the method.
+*/ 
+		// Constructor de una Vivienda. La vivienda tiene un método creado fuera de dicho constructor.
+		function Vivienda(tipo, anioConstruccion) {
+		  this.tipo= tipo;  
+		  this.anioConstruccion = anioConstruccion;
+		}
+		function bornBuilt() {
+		  return 2018 - this.anioConstruccion;
+		}
+
+		var vivienda1 = new Vivienda("Chalet", 1975);
+		vivienda1.bornBuilt();
+		document.write("<p>"+vivienda1+"</p>");
+
+		
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

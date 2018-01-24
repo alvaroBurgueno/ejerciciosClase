@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio Handlebars</title>
+</head>
+<body>
+	
+	<div class="content-placeholder"></div>
+	<script id="clave" type="text/x-handlebars-template">
+			
+			{{#each empresa}}
+			<p>Mi equipo favorito es {{name}} con sede en {{location}}.</p>
+			<p>{{identificarCiudad location}}</p>
+			{{/each}}
+ 		
+	</script> 
+
+
+ 	<script type="text/javascript" src="js/jQuery v3.2.1.min.js"></script> 
+	<script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
+	<script type="text/javascript">
+		/*
+		Function Helper
+
+		Objetivo: Añadir al listado de 2 empresas el resultado de ejecutar una función RegisterHelper para que compruebe la ciudad en la que está cada empresa.
+		*/
+
+		$(function () {
+
+		  // Grab the template script
+		 // var theTemplateScript = "Me llamo {{name}}. My address is {{street}} {{number}}.";
+		 var theTemplateScript = $("#clave").html();
+		 
+		  
+		  // Compile the template
+		  var theTemplate = Handlebars.compile(theTemplateScript);
+
+		  // Define our data object
+  		  var DatosEmpresa = {
+		   "empresa":[
+			    {"name" : "Real Madrid", "location" : "Madrid"},
+			    {"name" : "Athletic Bilbao" , "location" : "Bilbao"},
+			    {"name" : "FC Barcelona" , "location" : "Barcelona"}
+			  ]
+			}
+
+		// función para decir en qué ciudad está el equipo/empresa
+  		Handlebars.registerHelper("identificarCiudad", function(holaCiudad){
+  			//var salida="";
+			if (holaCiudad == "Madrid" ) {
+				return "Estoy en Madrid";
+			} else if (holaCiudad == "Bilbao") {
+				return "Estoy en Bilbao";
+			} else {
+				return "Estoy en Barcelona";
+			} 
+		});
+
+  		Handlebars.registerHelper("checkNombre", function (data,options){
+			return options.fn(data);
+		});
+
+
+		  // Pass our data to the template
+		  var theCompiledHtml = theTemplate(DatosEmpresa);
+
+		
+
+
+
+		  // Add the compiled html to the page
+		  $('.content-placeholder').html( theCompiledHtml );
+		});
+
+
+
+
+
+
+		/*
+		En JS:
+		1- Crear/ Modificar array JSON con datos de 2 empresas
+		2- Crear función RegisterHelper para comprobar la ciudad en la que estamos.
+		3- Comparar por nombre de ciudad, debe devolver un mensaje(String) que especifique la ciudad.
+		*/
+
+		/*
+		En la plantilla
+		1- Utilizar "each" para recorrer el array de empresas
+		2- Añadir la llamada a la función RegisterHelper creada
+		 (El resultado se añade al final del listado de cada empresa)
+
+		Ejemplo de llamada de función
+			<p>¿Qué ciudad eres? {{compruebaCity Ciudad}} </p>
+
+		*/
+	</script>
+</body>
+</html>

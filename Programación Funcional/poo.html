@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>POO</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+
+		//----------------------------------Abstracción------------------------------------------------------------
+
+		/*La interfaz, son las definiciones de las funciones, parámetros que reciben y lo que cumplen
+		La implementación es lo que ocurre dentro de las funciones*/
+		function Persona(nombre, edad) { // implementación
+			// Propiedades
+			this.nombre = nombre;
+			this.edad = edad;
+			// Métodos, decir su nombre y cumplir años
+			//decirNombre();
+			this.decirNombre = function() { // si no se pone el this da un error de no declarada la función.
+				return this.nombre;
+			}
+
+			//cumplirAños();
+		}
+
+		var persona1 = new Persona("David", 36);
+		var persona2 = new Persona("Goliat", 578);
+		//console.log(persona1.nombre); //David.
+		console.log( persona1.decirNombre() ); 
+		console.log( persona2.decirNombre() ); 
+
+		// Cambiar el nombre a Goliat
+		//persona2.cambiarNombre("Max Power");
+		Persona.prototype.cambiarNombre = function(nombre) {
+			this.nombre = nombre;
+		};
+
+		persona1.cambiarNombre("Max Power");
+		console.log( persona1.decirNombre() );
+
+		persona2.cambiarNombre("Clark Kent");
+		console.log( persona2.decirNombre() );
+		// Si quisiéramos aplicárselo a persona1 no podríamos, no está definida la función nada más que para persona2
+		// para ello hay que definir la función a partir de un prototipo -> prototype
+
+
+		Persona.prototype.nombre = "Nada";
+		console.log( persona1.decirNombre() );
+		console.log( persona2.decirNombre() );
+
+		Persona.prototype.color = "N"; 
+		// Añadir nueva propiedad VS  Java, donde habría que compilarlo previamente añadiendo la nueva propiedad
+		// en la clase requerida, pero no en tiempo de ejecución (gran diferencia con esta forma en JavaScript)
+		persona3 = new Persona("Eustráquea", 11);
+		console.log(persona3.color ); //
+		console.log(persona1.color ); //
+
+		// -----------------------------------------Herencia--------------------------------------------------------
+		// Yo soy el prototipo de mi hijo
+		// Mi padre es mi prototipo
+		// class Persona extends Jedi;
+		// Sin embargo en JS usamos los prototipos.
+
+		// Persona
+		//		
+		// -- Jedi = Persona.prototype	
+		// -- Sith = Persona.prototype	
+		
+		//var jedi1 = Persona.prototype;
+		
+		//console.log( jedi1.decirNombre() );
+
+		//var jedi1 = new Persona("Obi Wan", 45);
+		// el extends... -> CALL
+		// Este es el constructor.
+		function Jedi(nombre, edad, fuerza) {
+			Persona.call(this, nombre,edad);
+			this.fuerza = fuerza;
+		}
+		// Crear Jedi a partir de un nuevo constructor que llama al constructor de la clase Persona (Superclase)
+		Jedi.prototype = Object.create(Persona.prototype);
+		var jedi1 = new Jedi("Obi Wan", 45, 40);
+		console.log( jedi1.decirNombre() ); // obi Wan.
+
+		function Sith(nombre, edad, ladooscuro) {
+			Persona.call(this, nombre,edad); // Nazco como mi padre
+			this.ladooscuro = ladooscuro; // Añado cosas mías
+		}
+
+		// Mi prototipo es el de mi padre (heredo todo lo que tiene)
+		Sith.prototype = Object.create(Persona.prototype);
+		var sith1 = new Sith("Anakin", 90);
+		sith1.cambiarNombre("Darth Vather")
+		console.log( sith1.decirNombre() ); // Anakin.
+
+
+
+
+
+	</script>
+</body>
+</html>
