@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		var animales = new Array ("Perro", "Gato", "Ratón", "Periquito");
+
+		for (var i = 0; i < animales.length; i++) {
+			document.write(animales[i]+"<br />");
+		}
+
+		// MÉTODOS
+		document.write("Es un array?? "+ Array.isArray(animales));
+		document.write("<br/>Pero estás seguro?? "+ animales instanceof Array); // no me sale
+		document.write("<br/>Array Animales en tipo String "+ animales.toString()); 
+		document.write("<br/>Array Animales en tipo String "+ animales.join(" * ")) ; 
+
+		// MÉTODOS PARA AÑADIR, EXTRAER O ELIMINAR ELEMENTOS
+		// pop() y shift(): extraen el último y el primer elemento respectivamente
+		var primerAnimal = animales.pop(); // periquito
+		var ultimoAnimal = animales.shift(); // perro
+		document.write(primerAnimal+" "+ultimoAnimal);
+		document.write("<br/> Después de sacar al "+ultimoAnimal+" y al "+primerAnimal+" quedan "+animales.toString());
+		// eliminar elemento -> delete nombreArray
+
+		// push() y anshift() -> añaden en la última posición y en la primera respectivamente.
+		var anadirUltimaPosicion = animales.push("Jilguero");
+		var anadirPrimeraPosicion = animales.unshift("León");
+		document.write("<br/>"+animales).toString();
+		animales.splice(2,1, "Vaca", "Toro");
+		document.write(animales);
+
+
+	</script>
+</body>
+</html>

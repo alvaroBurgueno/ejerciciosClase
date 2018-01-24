@@ -5,7 +5,6 @@
 	<title>Objetos</title>
 </head>
 <body>
-	
 	<script type="text/javascript">
 		// Para crear una persona en concreto
 		var person = {
@@ -30,15 +29,7 @@
 		//Use the object literal or initializer syntax to create single objects. Solo para crear objetos directamente.
 		var John = {name: "John", age: 25};
 		var James = {name: "James", age: 21};
-/*		OTRA FORMA EQUIVALENTE
-		var John = {
-		  name: "John",
-		  age: 25
-		};
-		var James = {
-		  name: "James",
-		  age: 21
-		};					*/
+
 		//------------------------AÑADIENDO MÉTODOS AL PROTOTIPO---------------------------------------------------------------
 
 /*		A method is a function, belonging to an object. It can be referenced using the this keyword.
@@ -65,20 +56,114 @@
 		The this keyword is used to access the age property of the object, which is going to call the method.
 */ 
 		// Constructor de una Vivienda. La vivienda tiene un método creado fuera de dicho constructor.
-		function Vivienda(tipo, anioConstruccion) {
+		function Vivienda(tipo, aniosVivienda) {
 		  this.tipo= tipo;  
-		  this.anioConstruccion = anioConstruccion;
+		  this.aniosVivienda = aniosVivienda;
+		  this.anioConstruccion = calculaAnioConstruccion;
 		}
-		function bornBuilt() {
-		  return 2018 - this.anioConstruccion;
+		function calculaAnioConstruccion() {
+		  return (2018 - this.aniosVivienda);
+		} // la función está fuera del constructor
+
+		var vivienda1 = new Vivienda("Chalet", 56);
+		// Aquí se llama al parámetro anioConstruccion, que no es una función propiamente dicha pero sí que es igual 
+		// al resultado de una función, que relaciona al parámetro aniosVivienda con el año actual.
+		document.write("<p>"+vivienda1.anioConstruccion()+"</p>");
+
+		// Otro ejemplo de un constructor formado por varias propiedades y un método
+		function mathCalc (height, weight) {
+		  this.height = height;
+		  this.weight = weight;
+		  this.sampleCalc = calculate; // sin los paréntesis, para no llamar a la función en esta línea. 
+		  							   // La función se declararía fuera del constructor por tanto.
+		} 
+
+		//------------------------------------------ARRAYS --------------------------------------------------------------
+		/*var course1 ="HTML"; 
+		var course2 ="CSS"; 
+		var course3 ="JS"; ....................But what if you had 500 courses? The solution is an array.*/
+		var courses = new Array("HTML", "CSS", "JS");  // var courses = ["HTML", "CSS", "JS"]; <= PREFERIBLE
+		var course = courses[0]; // HTML
+		courses[1] = "C++"; //Changes the second element 
+		document.write("<p>"+courses[1]+"</p>"); // C++
+		document.write("<p>"+courses[0]+"</p>"); // HTML
+		document.write("<p>"+course+"</p>"); 	 // HTML
+		document.write(courses[10]); 			 // Undefined
+		// OTRA FORMA DE DECLARAR UN ARRAY => pasándole el número de elementos que va a tener.
+		var coursesBis = new Array(3); // Aquí se declara el Array indicándole que tendrá únicamente 3 elementos.
+		coursesBis[0] = "HTML";	coursesBis[1] = "CSS";coursesBis[2] = "JS";
+		// TAMBIÉN SE PUEDE DECLARAR UN ARRAY SIN PASARLE NINGÚN PARÁMETRO, Y LE VAS AÑADIENDO LOS ELEMENTOS SEGÚN LOS VAS NECESITANDO
+		var courses3 =new Array(); // 
+		//An array is a special type of object.
+		//An array uses numbers to access its elements, and an object uses names to access its members. 
+
+		//------------------------------------------PROPIEDADES DE LOS ARRAYS---------------------------------------------------
+		// 			1)______________LENGTH
+		/*The length property is always one more than the highest array index.
+		If the array is empty, the length property returns 0.
+		Array has the "length" property, because it is AN OBJECT
+		The length property is always one more than the highest array index.
+		If the array is empty, the length property returns 0.
+		*/
+		document.write("<p>"+courses.length+"</p>"); // Outputs 3
+
+		//------------------------------------------MÉTODO CONCAT-----------------------------------------------------------------
+
+		var c1 = ["HTML", "CSS"];  var c2 = ["JS", "C++"];
+		var courses = c1.concat(c2); // Une c1 y c2--> The concat operation does not affect the c1 and c2 arrays 
+/*		Remember that JavaScript does not support arrays with named indexes.
+		In JavaScript, arrays always use numbered indexes.
+		It is better to use an object when you want the index to be a string (text).
+		Use an array when you want the index to be a number.
+		If you use a named index, JavaScript will redefine the array to a standard object.	*/
+
+		//------------------------------------------MÉTODO MATH ------------------------------------------------------------------
+
+		// Math has no constructor. There's no need to create a Math object first.
+		document.write(Math.PI);	//Outputs 3.141592653589793
+		var number = Math.sqrt(4); // calculate the square root of a number.
+		document.write("<p>"+number+"</p>"); //Outputs 2
+/*		var n = prompt("Enter a number", ""); // prompt recoge entrada por teclado de usuario
+		var answer = Math.sqrt(n);			  // se almacena en una nueva  variable el resultado de su raíz
+		alert("The square root of " + n + " is " + answer);*/	
+
+//---------------------------------------------------SET INTERVAL ----------------------------------------------------------------
+
+		/*
+		The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+		It will continue calling the function until clearInterval() is called or the window is closed.
+		*/
+		function myAlert() {
+		   alert("Hi");
 		}
+		//setInterval(myAlert, 3000);		//------------- se comenta para que no vaya dando por culo---------------//
 
-		var vivienda1 = new Vivienda("Chalet", 1975);
-		vivienda1.bornBuilt();
-		document.write("<p>"+vivienda1+"</p>");
+//---------------------------------------------------DATE OBJECT ----------------------------------------------------------------
 
-		
+		/*
+		The Date object enables us to work with dates.
+		A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.
+		Using new Date(), create a new date object with the current date and time.
+		*/
+		var d = new Date();								//d stores the current date and time
 
+		var d1 = new Date(86400000); 					//Fri Jan 02 1970 00:00:00
+		var d2 = new Date("January 2, 2015 10:42:00");	//Fri Jan 02 2015 10:42:00
+		var d3 = new Date(88,5,11,11,42,0,0);			//Sat Jun 11 1988 11:42:00
+		console.log(d1+d2+d3);
+
+/*		JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 				86,400,000 millisecond.JavaScript counts months from 0 to 11. January is 0, and December is 11.
+		Date objects are static, rather than dynamic. The computer time is ticking, but date objects dont change, once created.*/
+		function printTime() {
+		  var d = new Date();
+		  var hours = d.getHours();
+		  var mins = d.getMinutes();
+		  var secs = d.getSeconds();
+		  document.body.innerHTML = hours+":"+mins+":"+secs; // Se carga toda la página HTML y pone la hora actual.
+		}
+		//setInterval(printTime, 1000);
+/*		The innerHTML property sets or returns the HTML content of an element.
+		In our case, we are changing the HTML content of our document's body. This overwrites the content every second, instead of printing it repeatedly to the screen.							*/
 
 
 

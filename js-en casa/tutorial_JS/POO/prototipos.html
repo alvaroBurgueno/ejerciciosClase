@@ -21,9 +21,12 @@
 		var persona1 = new Persona ("Pepe", "Gotera", 35);
 		var persona2 = new Persona ("Jorge", "Pérez", 35);
 		//alert(persona1.nombreCompleto());
-		// AÑADIR UNA PROPIEDAD A UN OBJETO
+
+		// ------------------	AÑADIR UNA PROPIEDAD A UN OBJETO
 		persona1.nacionalidad = "Portuguesa"; // solo se añade a persona1
-		// AÑADIR UN MÉTODO A UN OBJETO
+		//console.log(persona1.nacionalidad);
+
+		// ----------		AÑADIR UN MÉTODO A UN OBJETO , aunque tambíén se puede hacer directamente dentro del objeto.
 		persona1.anio = function () {
 			return this.nombre+" tiene "+this.edad+" años.";
 		}
@@ -33,6 +36,7 @@
 		// MEDIANTE LA SINTAXIS: <nombre_objeto>.prototype.<propiedad>
 		Persona.prototype.estudios = "Programación Básica";
 		//alert(persona2.estudios);
+		
 		// AÑADIR UN MÉTODO A UN PROTOTIPO
 		// AÑADIENDO DIRECTAMENTE SOBRE LA DEFINICIÓN DE PROTOTIPO
 		// MEDIANTE LA SINTAXIS: <nombre_objeto>.prototype.<metodo> = ...
