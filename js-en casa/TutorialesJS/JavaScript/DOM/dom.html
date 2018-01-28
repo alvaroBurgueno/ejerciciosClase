@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="demo">
+			<p>hola que ase</p>
+			<p>hola que ase</p>
+			<p>hola que ase</p>
+			<p>hola que ase</p>
+			<p>hola que ase</p>
+	</div>
+	<div>
+		<img id="myimg" class="mediana" src="img/pb1.jpg" alt="patatabrava" />
+	</div>		
+	<div>
+		 <img id="myimg" class="mediana" src="img/pb2.jpg" alt="patatabrava" />
+	</div>		 
+	
+	<a href="http://www.example.com">Some link</a>
+
+	<script type="text/javascript">
+	
+/*	 Document Object Model
+	 <html> has two children (<head>, <body>);
+	<head> has one child (<title>) and one parent (<html>);
+	<title> has one parent (<head>) and no children;
+	<body> has two children (<h1> and <a>) and one parent (<html>);	*/	
+
+	// The innerHTML property can be used on almost all HTML elements to change its content.
+	//document.body.innerHTML = "Some text";
+
+	//The document object has methods that allow you to select the desired HTML element.
+	//These three methods are the most commonly used for selecting HTML elements: 
+	document.getElementById("id"); //finds element by id
+	document.getElementsByClassName("name"); //finds elements by class name 
+	document.getElementsByTagName("name"); //finds elements by tag name
+	// The example belong assumes that the HTML contains an element with id="demo", for example <div id="demo"></div>.
+	var elem = document.getElementById("demo");
+	//elem.innerHTML = "Hello World!";
+		/*
+	element.childNodes returns an array of an element's child nodes.
+	element.firstChild returns the first child node of an element.
+	element.lastChild returns the last child node of an element.
+	element.hasChildNodes returns true if an element has any child nodes, otherwise false.
+	element.nextSibling returns the next node at the same tree level.
+	element.previousSibling returns the previous node at the same tree level.
+	element.parentNode returns the parent node of an element.
+	*/
+    var a = document.getElementById("demo");
+    var arr = a.childNodes;
+    for(var x=0;x<arr.length;x++) {
+     //arr[x].innerHTML = "new text"; --> cambia en cada elemento p que son hijos del id="demo" a new text.
+      console.log(arr[x].innerHTML);
+    }
+    var foto = document.getElementById("myimg");
+	//foto.src = "img/pb2.jpg"; // simplemente cambia una imagen por otra.
+
+	var el = document.getElementsByTagName("a");
+	el[0].href = "http://www.sololearn.com";
+
+	var arr = document.getElementsByTagName("img");
+	for(var x=0; x<arr.length; x++) {
+	  //arr[x].src = "img/pb3.jpg";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Storage</title>
+	<link rel="stylesheet" type="text/css" href="css/webStorage.css">
+</head>
+<body>
+	
+	<div class="opciones">
+		<input type="button" class="btn" id="incrementar" value="Incrementar" />
+		<input type="button" class="btn" id="decrementar" value="Decrementar" />
+		<input type="button" class="btn" id="logout" value="Log-Out" />
+		<p id="saludo"></p>
+		<p id="contador"></p>
+	</div>
+	
+	<!-- 
+	WEB STORAGE
+		- Permite almacenar datos localmente en el navegador del usuario
+		- Es más seguro y almacena más información que las cookies
+		- El Web Storage se almacena por origen (dominio y protocolo): todas las páginas del mismo origen puedes acceder a los mismos datos.
+
+		localStorage.getItem("usuario") => muestra el valor del usuario(pepe, juanito...)
+		localStorage.setItem("usuario", "pepe") => asigna a usuario el valor pepe
+	 -->
+
+	<script type="text/javascript">
+		
+		//Comprobación que el navegador soporta webStorage
+		if (typeof(Storage) !== "undefined") {
+			// Saludo al Usuario
+			saludar();
+			// Contador
+			contador();
+			// Botones Incrementar y Decrementar
+			document.getElementById("incrementar").addEventListener('click', incrementar);
+			document.getElementById("decrementar").addEventListener('click', decrementar);
+			document.getElementById("logout").addEventListener('click', logout);
+		} else {
+			console.log("Navegador no soporta WS");
+		}
+
+		function saludar() {
+			console.log("Navegador soporta WS.");
+			// Saludo al Usuario
+			if (localStorage.getItem("usuario")!=null) {
+				document.getElementById("saludo").innerHTML = "Bienvenido de nuevo, "+localStorage.getItem("usuario")+"!";
+			} else {
+				var nombre = prompt("Nombre Usuario:");
+				localStorage.setItem("usuario", nombre);
+				document.getElementById("saludo").innerHTML = "Tu primera visita, "+localStorage.getItem("usuario");
+			}
+		}
+
+		function contador() {
+			//Contador
+			if (!sessionStorage.getItem("contador")) {
+				sessionStorage.setItem("contador", "0"); // se utiliza string.
+			}
+			document.getElementById("contador").innerHTML = "Contador: "+sessionStorage.getItem("contador");
+		}
+
+		function incrementar() {
+			sessionStorage.setItem("contador", Number(sessionStorage.getItem("contador"))+1);
+			document.getElementById("contador").innerHTML = "Contador: "+sessionStorage.getItem("contador");
+		}
+
+		function decrementar() {
+			sessionStorage.setItem("contador", Number(sessionStorage.getItem("contador"))-1);
+			document.getElementById("contador").innerHTML = "Contador: "+sessionStorage.getItem("contador");
+		}
+
+		function logout() {
+			console.log("Se ha cerrado la sesión de "+localStorage.getItem("usuario"));
+			localStorage.removeItem("usuario");
+			// localStorage.clear(); => solo afecta a localStorage, no se borrarían los valores de contador
+			document.getElementById("saludo").innerHTML = "";
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>

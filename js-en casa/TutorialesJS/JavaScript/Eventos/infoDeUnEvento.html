@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extraer Info de un Evento</title>
+</head>
+<body>
+	
+	<h1 id="eventos">Obtener info de un evento</h1>
+	<h2 id="parrafo1">Párrafo 1</h2>
+	<h2 id="parrafo2">Párrafo 2</h2>
+
+	<script type="text/javascript">
+		
+		document.getElementById("eventos").addEventListener("mouseover", manejador);
+		document.getElementById("eventos").addEventListener("mouseout", manejador);
+		document.getElementById("parrafo1").addEventListener("click", saludo);
+		document.getElementById("parrafo2").addEventListener("click", saludo);
+		// el navegador crea objeto de tipo evento, cuando nos colocamos encima del elemento por ejemplo, creado automáticamente. En navegador de Microsoft no reconoce ese evento porque no genera este objeto, el reesto de navegadores si los crea.
+		function manejador(e){
+			// posibilidad de que se use Explorer de Microsoft.
+			if (!e) e = window.event;
+
+			switch(e.type){
+				case "mouseover":
+					this.style.color = "purple";
+					break;
+				case "mouseout":
+					this.style.color = "yellow";
+					break;
+			}
+		}
+
+		function saludo(e){
+			// posibilidad de que se use Explorer de Microsoft.
+			if (!e) e = window.event;
+			// Con e.target se recoge el tipo de elemento que es...en este caso los h2.
+			
+			if (e.target.id == "parrafo1") console.log("Has pulsado el primer párrafo.");
+			else if (e.target.id == "parrafo2") console.log("Has pulsado el segundo párrafo.");
+		}
+		//console.log(e.target);
+
+
+
+	</script>
+</body>
+</html>

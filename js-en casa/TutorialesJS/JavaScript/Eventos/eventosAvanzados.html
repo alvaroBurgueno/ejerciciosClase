@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos Avanzados del W3C</title>
+</head>
+<body>
+	<h1>Modelo de Eventos Avanzado del W3C</h1>
+	<h3 id="w3c">Modelo del W3C</h3>
+	<h3 id="w3cAnonima">Modelo del W3C con funciones anónimas</h3>
+
+
+	<script type="text/javascript">
+		/*elemento.addEventListener("<eventoSinOn>",<funcion>,<false|true>);*/
+		document.getElementById("w3c").addEventListener("click", saludar, false);
+		document.getElementById("w3c").addEventListener("click", colorear, false);
+		document.getElementById("w3c").addEventListener("mouseover", colorearFondo, false);
+
+		
+		function saludar(){
+			console.log("Hola que ase.");
+			document.getElementById("w3c").removeEventListener("click",saludar); // para que se ejecute úncamente consolelog la primera vez que se produce este evento
+		}
+		function colorear(){
+			console.log("Colorear.");
+			document.getElementById("w3c").style.color = "green";
+		}
+		function colorearFondo(){
+			console.log("Colorear Fondo.");
+			document.getElementById("w3c").style.background = "pink";
+		}
+		/*
+		 FUNCIONES ANÓNIMAS
+		 elemento.addEventListener("eventoSinOn", funcion(){
+			<codigo_funcion>
+		 })
+		*/
+		document.getElementById("w3cAnonima").addEventListener("click", function(){
+			console.log("Entra en la FA");
+			this.style.background = "#EE5858";
+		});
+
+	</script>
+</body>
+</html>

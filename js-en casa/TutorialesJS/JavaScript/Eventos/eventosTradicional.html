@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+</head>
+<body>
+	
+	<h1>Modelo de registro de eventos en línea.</h1>
+
+	<!-- 
+	Cada elemento XHTML tiene sus posibles eventos como propiedades: puede tener un evento de cada tipo. El nombre del evento es "on" seguido del nombre de la acción.
+	 -->
+
+	 <!-- 
+	Manejadores como atributo de una etiqueta XHTML
+	  -->
+	<h3 id="tradicional" >Pulsa aquí.</h3>
+	<h3 id="tradicional_2" >Pulsa aquí ahora.</h3>
+	<script type="text/javascript">
+		/*
+------------------------------EVENTO------------
+	Mecanismo que se acciona cuando el usuario realiza un cambio sobre la página web.
+	Capturar un evento es programar una acción para que se realice una tarea.
+	El encargado de gestionar los eventos es el DOM(Document Object Model)
+						MANEJADOR
+	Acción que se va a manejar. Por ejemplo, en el evento click el manejador es onClick.
+
+*/
+
+	document.onload = function() {
+		console.log("La página ha cargado correctamente.");
+		document.getElementById("tradicional_2").onClick = miMensaje; // sin paréntesis.
+	}
+	function miMensaje() {
+		document.getElementById("tradicional_2").innerHTML = "Modelo de registro de eventos tradicional.";
+	}
+
+	document.getElementById("tradicional").onclick = cambiar; // sin paréntesis.
+
+	function cambiar() {
+		console.log("Entramos en cambiar().");
+		document.getElementById("tradicional").innerHTML="Modelo de registro de eventos tradicional";
+		document.getElementById("tradicional").onclick = null;// para que solo se contabilice una vez el consolelog.
+	}
+
+
+	// Inconveniente:
+	// La página debe estar completamente cargada para que se utilicen las funciones DOM que asignan los manejadores a los elementos HTML
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Validación Formulario Avanzada</title>
+	<script type="text/javascript" src="js/formulario.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/formulario.css">
+</head>
+<body>
+	
+
+	<form action="validar.php" method="post" id="miFormulario">
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" name="name" id="name" maxlength="15" pattern="[A-Za-z]{2,15}" title="De 2 a 15 letras" required /></td>
+			</tr>
+			<tr>
+				<td>Edad</td>
+				<td><input type="number" name="age" id="age" min="18" max="100" required /></td>
+			</tr>
+			<tr>
+				<td>Teléfono</td>
+				<td><input type="text" name="phone" id="phone" pattern="[0-9]{9}" required></td>
+			</tr>
+		</table>
+		<p id="mensajeError" class="msjError"></p>
+		<p>
+			<input type="submit" name="Enviar" id="enviar">
+			<input type="reset" name="Borrar" id="borrar">
+		</p>
+	</form>
+
+
+</body>
+</html>

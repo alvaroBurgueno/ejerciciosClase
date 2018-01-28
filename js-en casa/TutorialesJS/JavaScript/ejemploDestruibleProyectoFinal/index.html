@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario de Inicio de Sesión</title>
+	<link rel="stylesheet" type="text/css" href="css/prueba.css">
+</head>
+<body>
+	
+	<form action="archivo.php" method="POST" class="margin">
+		<table>
+			<tr>
+				<td><label for="usuNombre">Nombre Usuario</label></td>
+				<td><input type="text" name="usuNombre" id="usuNombre" /></td>
+			</tr>
+			<tr>
+				<td><label for="pwd">Contraseña</label></td>
+				<td id="usuPwd"><input type="text" name="pwd"></td>
+			</tr>
+		</table>
+		<p class="btn">
+			<input type="submit" id="enviar" value="Enviar">
+			<input type="reset" id="borrar" value="Borrar">
+		</p>
+
+	</form>
+
+
+
+
+	<script type="text/javascript">
+		//Comprobación que el navegador soporta webStorage
+		if (typeof(Storage) !== "undefined") {
+			// Saludo al Usuario
+			saludar();
+			document.getElementById("logout").addEventListener('click', logout);
+		} else {
+			console.log("Navegador no soporta WS");
+		}
+
+		function bienvenida() {
+			console.log("Navegador soporta WS.");
+			// Saludo al Usuario
+			if (localStorage.getItem("usuario")!=null) {
+				document.getElementById("saludo").innerHTML = "Bienvenido de nuevo, "+localStorage.getItem("usuario")+"!";
+			} else {
+				var nombre = document.getElementById("usuNombre");
+				localStorage.setItem("usuario", nombre);
+				document.getElementById("saludo").innerHTML = "Tu primera visita, "+localStorage.getItem("usuario");
+			}
+		}
+
+
+
+
+	</script>
+</body>
+</html>
