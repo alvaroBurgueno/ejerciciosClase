@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body> 
+<h1>HTML Audio/Video DOM</h1>
+<h2>Utilizando HTML y JavaScript, se pide practicar con las etiquetas &#60;video&#62; y &#60;audio&#62; vistas en clase para control de video/audio. El objetivo es familiarizarse con el manejo de propiedades, método y eventos vistos en clase.</h2>
+<ul>
+	<li>EJERCICIO:Crear botones para iniciar, y pausar un vídeo o audio</li>
+	<li>EJERCICIO: Añadir controles al vídeo por HTML. Utillizar javascript para activar/desactivar los controles del vídeo.Mostrar por pantalla/alert/console el estado de los controles:true/false.</li>
+	<li>EJERCICIO: Mostrar por pantalla/alert/console un mensaje cuando el usuario pulse play/pause en el vídeo</li>
+	<li>EJERCICIO: Mostrar por pantalla/alert/console cuando el usuario cambie volumen de vídeo</li>
+  <li>EJERCICIO: En la vista HTML, se pide cambiar de vídeo pulsando un botón. Es necesario tener dos vídeos para que se alternen cada vez que se pulse un botón. load().
+  </li>
+  <li>EJERCIO: Duración del vídeo. Pulsando un botón se debe poder cambiar el tiempo de ejecución del vídeo. Ejemplo: si pulso el botón se visualizará a partir del segundo 20.
+  </li>
+
+
+	<li>EJERCICIO PENDIENTE: cambiar el código para no tener que utilizar el atributo onclick en los botones del HTML y hacer la llamada a los métodos desde el fichero JavaScript. Usar de referencia el ejercicio de audio: controls_audio.html</li>
+</ul>
+
+<div  align="center" class="w3-bar">
+
+<video id="myVideo" width="520" height="276" controls>
+  <source src="media/small.mp4" type="video/mp4">
+  Tu navegador no soporta HTML5
+</video>
+<p id="ultimo_cambio">CAMBIO:</p>
+  <button class="w3-button w3-black" onclick="playVideo()">Play Video</button>
+  <button class="w3-button w3-red" onclick="pauseVideo()">Pause Video</button>
+  <button class="w3-button w3-black" onclick="enableControls()">Enable controls</button>
+  <button class="w3-button w3-red" onclick="disableControls()">Disable controls</button>
+  <button class="w3-button w3-black" onclick="checkControls()">Check controls status</button>
+  <button class="w3-button w3-red" id="change_video">Change video</button>
+  <button class="w3-button w3-black" id="change_time">Change time</button>
+
+<p>AUDIO</p>
+<audio id="myAudio" controls>
+  <source src="media/2553.mp3" type="audio/mpeg">
+  Tu navegador no soporta HTML5
+</audio>
+<p id="ultimo_cambio_audio">CAMBIO:</p>
+  <button class="w3-button w3-black" onclick="playAudio()">Play Audio</button>
+  <button class="w3-button w3-red" onclick="pauseAudio()">Pause Audio</button>
+
+</div>
+
+
+<script src="js/ejercicio_audio_video.js"></script>
+
+</body> 
+</html>

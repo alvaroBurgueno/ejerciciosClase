@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Función Promedio</title>
+</head>
+<body>
+	
+
+
+	<script type="text/javascript">
+		/*
+		Ejercicio 
+		Utilizando el operador "..." crear una función que te calcule el promedio de los parámetros que se le pasan a la función y te los muestre por consola
+		- Número de parámetros indeterminado. Usar operador "..."
+		- Usar el nuevo bucle for:
+			for (const i of args) {
+				// código del for
+			}
+		- En la llamada a la función, pasar por parámetro un array de valores usando el operador "..."
+		*/
+		function promedio(...avrg_values) {
+			let suma = 0;
+			for (const numeroActual of avrg_values) {
+				suma += numeroActual;
+			}
+			res = suma/avrg_values.length;
+			return res;
+		}
+		var args = [5,10,15,20,25];
+		console.log(promedio(...args));
+
+		function promedio(a, b,...avrg_values) { // para decirle que obligatoriamente tenga 2 parámetros mínimo
+			let suma = a+b;
+			for (const numeroActual of avrg_values) {
+				suma += numeroActual;
+			}
+			res = suma/arguments.length; // se usa arguments que es el total de parámetros de la función.
+			return res;
+		}
+		var args = [2,4,6];
+		console.log(promedio(...args));
+
+		var mensaje = 'Qué tal';
+		var name = `Illo ${mensaje}`;
+		console.log(name);
+
+	</script>
+</body>
+</html>

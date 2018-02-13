@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objeto Set</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		let juegos = new Set( ['Supermario','Tekken','Mario Kart'] );
+		console.log(juegos);
+		// Añadir
+		juegos.add('Tetris');
+		// Añadir (no hace nada, porque Tetris ya existe)
+		juegos.add('Tetris');
+		console.log(juegos);
+
+		for (el_juego of juegos){
+			console.log(el_juego); // Para sacar los elementos individualmente.
+		}
+		// Iterar con .next()
+		// .values
+		let iterador = juegos.values();
+		console.log(iterador); // para que puntero apunte a esta posición.
+		console.log(iterador.next().value);
+		console.log(iterador.next().value);
+		juegos.clear();
+		console.log(juegos);
+
+		// WeakSet
+		let persona1 = {nombre:'Pepe', edad:22};
+		let persona2 = {nombre:'Marcos', edad:41};
+		let personas = new WeakSet( [persona1,persona2] );
+		console.log(personas);
+		//Añadir Personas
+		let persona3 = {nombre: 'Mar', edad:32};
+		console.log(personas);
+/*		for (personita of personas){
+			console.log(personita);
+		}*/
+		// Borrar personas
+		personas.delete(persona3);
+		console.log(personas);
+		// Borrar todo el WeakSet
+		personas = null;
+		console.log(personas);
+
+		// A
+
+
+
+
+	</script>
+</body>
+</html>

@@ -61,13 +61,12 @@
 			return options.fn(data);
 		});
 
+		// Ejemplo register partial (plantilla parcial)
+		Handlebars.registerPartial("myPartial")
+
 
 		  // Pass our data to the template
 		  var theCompiledHtml = theTemplate(DatosEmpresa);
-
-		
-
-
 
 		  // Add the compiled html to the page
 		  $('.content-placeholder').html( theCompiledHtml );

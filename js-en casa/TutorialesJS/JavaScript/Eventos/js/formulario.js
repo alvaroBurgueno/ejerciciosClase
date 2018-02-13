@@ -18,7 +18,7 @@
 				//error(elemento);
 				return false;
 			}
-			borrarError()
+			borrarError();
 			return true;
 		}
 
@@ -40,7 +40,7 @@
 				//error(elemento);
 				return false;
 			}
-			borrarError()
+			borrarError();
 			return true;
 		}
 
@@ -57,7 +57,7 @@
 				}
 				return false;
 			}
-			borrarError()
+			borrarError();
 			return true;
 		}
 

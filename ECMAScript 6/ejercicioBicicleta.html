@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bicicleta</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+/*		
+	Crear una subclase bicicleta que extienda de la clase vehículo.
+	Subclase Bicicleta debe sobreescribir al constructor de Vehículo, 
+	cambiando valores por defecto
+
+	- Parámetros por defecto del constructor del Vehículo:
+		* Color = "Azul"
+		* Ruedas = 4 
+		* Sonido = "Ñiuuuum" 
+	- Nuevos parámetros por defecto del constructor de bicicleta:
+		* Ruedas = 2 
+		* Sonido = "run run"
+	- Método del Vehículo (Padre):
+		tocarClaxon(){
+			console.log(<sonido_claxon>)
+		}
+*/		
+	
+	class Vehiculo {
+		// Constructor
+		constructor(Color="Azul",Ruedas=4,Sonido="Ñiuuum"){
+			this.Color = Color;
+			this.Ruedas = Ruedas;
+			this.Sonido = Sonido;
+		}
+		// Métodos
+		getColor(){
+			return this.Color;
+		}
+		setColor(Color){
+			this.Color = Color;
+		}
+		getRuedas(){
+			return this.Ruedas;
+		}
+		setRuedas(Ruedas){
+			this.Ruedas = Ruedas;
+		}
+		getSonido(){
+			return this.Sonido;
+		}
+		setSonido(Sonido){
+			this.Sonido = Sonido;
+		}
+		tocarClaxon(){
+			//console.log(this.getSonido());  BUENAS PRÁCTICAS NO PERMITEN ESTO DENTRO DE UNA FUNCIÓN.
+			return this.Sonido;
+		}
+	}
+
+	// Clase Bicicleta que hereda de Vehículo
+	class Bicicleta extends Vehiculo{
+		constructor(Color,Ruedas=2,Sonido="BIPBIP"){
+			super(Color,Ruedas,Sonido);
+		}
+	}
+
+	//var miBicicleta = new Bicicleta(undefined,2,"lopillaRober"); //SI SOLO QUIERES ESTOS VALORES EN ESTA BICI.
+	var miBicicleta = new Bicicleta();
+	var miBicicleta_2 = new Bicicleta(undefined,2,"lopillaRober");
+	console.log(miBicicleta.getSonido()+" / "+miBicicleta.getRuedas()+" / "+miBicicleta.getColor()+".");
+	console.log(miBicicleta_2.getSonido());
+
+	//miBicicleta.tocarClaxon();
+	console.log(miBicicleta.tocarClaxon());
+
+	</script>
+</body>
+</html>

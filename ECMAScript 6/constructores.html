@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		// Clase Persona
+		class Persona {
+			// Constructor
+			constructor(nombre,edad){
+				this.nombre = nombre;
+				this.edad = edad;
+			}
+			// Métodos
+			getNombre(){
+				return this.nombre;
+			}
+			setNombre(nombre){
+				this.nombre = nombre;
+			}
+			getEdad(){
+				return this.edad;
+			}
+			setEdad(edad){
+				this.edad = edad;
+			}
+		}
+
+		// Clase estudiante, que hereda de Persona
+		class Estudiante extends Persona{
+			constructor(nombre="Valor_Predeterminado",edad=22,id=1){
+				// Llamar al constructor del padre
+				// Primera línea SIEMPRE el constructor
+				super(nombre,edad);
+				// Nuevo parámetro
+				this.id = id;
+			}
+			getId(){
+				return this.id;
+			}
+			setId(id){
+				this.id = id;
+			}
+
+			// Sobreescribir el método del padre
+			setNombre(nombre){
+				this.nombre = `${nombre}`;
+			}
+		}
+
+		// Instanciar objetos
+		var estudiante = new Estudiante("Pepe", 25, 1);
+		console.log(estudiante.getNombre());
+		// Modificar nombre con método del hijo
+		estudiante.setNombre("Hola ke ase");
+		console.log(estudiante.getNombre()); 
+		 // Instanciar objetos del padre
+		 var persona = new Persona("Pepe2", 22);
+		 // Nombre del padre
+		 console.log(persona.getNombre());
+		// Modificar nombre con métodos del padre
+		persona.setNombre("Hola 2");
+		console.log(persona.getNombre());
+
+		// undefined para que no cambie los valores predeterminados del padre.
+		var estudiante2 = new Estudiante(undefined,undefined);
+		console.log(estudiante2.getNombre());
+
+
+
+
+
+
+	</script>
+</body>
+</html>
